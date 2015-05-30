@@ -1,3 +1,18 @@
+a {
+    text-decoration: none;
+    color: #d8f4ea;
+
+}
+
+a:hover {
+    text-decoration: none;
+    color: #20332c;
+}
+
+#bloglink {
+    text-decoration: none;
+    color: #20332c;
+}
 
 body {
     background-color: #c7ebde;
