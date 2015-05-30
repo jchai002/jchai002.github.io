@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="../default.css"/>
+        <title>Technical Blog 2</title>
+    </head>
+
+    <body>
+    <font color="#000e09">
+    <nav id="banner">
+   <table>
+    <tr>
+    <td>
+
+    <div id="spacer"><font color="#d8f4ea"><a href="https://jchai002.github.io/index.html"> 
+    Home</a></font></div></td> 
+    <td><div id="spacer"><font color="#d8f4ea">About Me</font></div></td>
+    <td><div id="spacer"><font color="#d8f4ea"><a href="https://jchai002.github.io/BlogMain.html
+    ">Blog</a></font></div></td>
+    <td><div id="spacer"><font color="#d8f4ea">Projects</font></div></td>
+    <td><div id="spacer"><font color="#d8f4ea">Contact</font></div></td>
+    
+    </tr>
+    </table>
+
+    </nav>
+    
+    <article class="content">
+    
+
+    <font color="#001b11">
+  <h1>CSS: Class vs. ID</h1>
+  <h4>05.30.15</h4>
+
+    <p>
+      At first glance, there doesn't seem to be any difference between Class and ID. Both of them can be assigned to HTML elements as behavior modifiers. I thought that ID's can only be assigned to one element, but that's not the case either. There is nothing in the HTML and CSS languages to prevent the same ID being assigned to multiple elements. The only difference between Class and ID comes down to specificity, which led to certain conventions in their usage.
+    </p>
+    <p>
+    What is specificity, you ask? To put simply, it decide who the HTML element listens to. If Class and ID are a divorced couple, each telling different things to their child aka the HTML element, then ID would win because it is more specific. Okay, that might be a confusing analogy, it's probably better to use an example.
+    </p>
+    <p>
+    Let's say that we have 3 seperate div tags, and we assign each of them with the class "square," and we give each of them the ID "block1," "block2," and "block3" respectively. If we modify the CSS and give the "square" class a width and height of 100px, and a background-color of red, then all 3 divs would become red 100px * 100px squares. If I then modify the CSS for the "block1" ID and give it a background-color of "blue," then the first div would turn blue while the other two remains red. Because the background-color property of the first block was described by both its Class and ID, the vaule in the ID over-rides the value in the Class because ID is more specific.
+    </p>
+    <p>
+    A good rule of thumb regarding the usage of Class and ID is to make sure each HTML element has an unique ID, that is, do NOT assign the same ID to multiple elements. Although there is nothing preventing you from being a rebel and give the same ID to different elements, its not good practice to do so. Just because there is nothing physically preventing me from flipping off every person I meet, doesn't mean that I should walk up to the next police officer I see and give him the bird. Besides, there are situations where we might want to modify the style of a certain element individually. In the example above, let's say that we gave all three divs the ID "block1," and at some point we want to change one of to a rectangle, we can't simply edit the width and height property in the #block1 CSS code, because it would make all 3 divs into rectangles. If we do want to edit all 3 divs at once, then we are better off giving them the same Class and edit that instead.
+    </p>
+    In conclusion, ID is more specific than class, and it's good practice to give each element an unique ID. I mean, you wouldn't make a bunch of copies of your ID and hand it off to a bunch of random people, because that wouldn't be...well, classy.
+    </font>
+    </article>
+    
+    <a href="https://www.facebook.com/jerbearrr">
+    <img id="block1" src="http://i1024.photobucket.com/albums/y309/Dreamlandmattress/Web%20Site%20Pics/facebook-button_zpsshzoww9s.jpg" />
+    </a>
+    <a href="https://twitter.com/JerryChaiTea">
+    <img id="block2" src="http://i1024.photobucket.com/albums/y309/Dreamlandmattress/Web%20Site%20Pics/Twitter_bird_button_0_zpsauijh2gx.png" />
+    </a>
+    <a href="https://www.linkedin.com/in/jerrychaitea">
+    <img id="block2" src="http://i1024.photobucket.com/albums/y309/Dreamlandmattress/Web%20Site%20Pics/linkedin_logo_zpszxh9dje9.png" />
+    </a>
+    </body>
+
+</html>
