@@ -20,7 +20,7 @@ body {
 
 }
 
-#block1 {
+.block1 {
     display:inline-block;
     height: 75px;
     width: 75px;
@@ -28,7 +28,7 @@ body {
     margin-right: 0px;
     border-radius: 10px;
 }
-#block2 {
+.block2 {
     display:inline-block;
     height: 75px;
     width: 75px;
@@ -69,3 +69,14 @@ table {
     text-align: center;
 }
 
+h2 {
+    color:#0f4b83;
+    display: inline-block;
+    margin-left: 15%;
+}
+
+.icon {
+    color:#0f4b83;
+    display: inline-block;
+    margin-left: 20px;
+}
