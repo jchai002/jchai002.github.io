@@ -41,11 +41,10 @@ body {
 
 #profile {
     display:inline-block;
-    height: 400px;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
+    height: auto;
+    width: 20%;
     border-radius: 10px;
+    margin: 10px;
 }
 
 .content {
