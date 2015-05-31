@@ -18,15 +18,6 @@ body {
     background-color: #c7ebde;
 }
 
-#banner {
-    display:block;
-    height: 30px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    background-color: #478e75;
-
 }
 
 #block1 {
@@ -67,12 +58,14 @@ body {
     
 }
 
-#spacer {
-    width: 200px;
-}
-
 table {
-    width: 100%;
-    border-radius: 3px;
+    display:block;
+    height: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    background-color: #478e75;
+    text-align: center;
 }
 
