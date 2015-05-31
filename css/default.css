@@ -16,6 +16,8 @@ a:hover {
 
 body {
     background-color: #c7ebde;
+    font-family: Arial;
+    color: #676F52;
 }
 
 }
@@ -79,4 +81,9 @@ h2 {
     color:#0f4b83;
     display: inline-block;
     margin-left: 20px;
+}
+
+h1 {
+    font-family: Arial;
+    color: #676F52;
 }
