@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="../css/default.css"/>
+        <link type="text/css" rel="stylesheet" href="../css/font-awesome.css"/>
+        <title>Technical Blog 3</title>
+    </head>
+
+    <body>
+     <nav>
+   <table>
+    <tr>
+    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/index.html"> 
+    Home</a></font></td> 
+    <td width="200px"><font color="#d8f4ea">About Me</font></td>
+    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/BlogMain.html
+    ">Blog</a></font></td>
+    <td width="200px"><font color="#d8f4ea">Projects</font></td>
+    <td width="200px"><font color="#d8f4ea">Contact</font></td>
+    </tr>
+    </table>
+    </nav>
+    
+    <article class="content">
+    
+
+    <font color="#001b11">
+  <h1>Ruby: Array vs. Hash</h1>
+  <h4>06.05.15</h4>
+
+    <p>
+     Ruby has several classes of objects to collect multiple items in one object, two of these classes are Array and Hash. They both share some methods, while some methods are unique to one or the other. However, the most important distinction between Array and Hash is the way they are indexed. 
+    </p>
+    <p>
+     Indexing is a way to organize multiple items which makes it easier for them to be accessed. It's probably to explain indexing using an example. Here we will use an Array. Let's assume that we have an Array called food, which contains three items in the form of strings: "noodle", "rice", and "egg". The Array would look like this : food = ["noodle", "rice", "egg"]. If we want ruby to return us the string "noodle", we can do type food[0]. Here, "0" is the index value that represents "noodle" in this Array. In computer science, people like to start counting at 0, which is why 0 actually represents the first item in the Array. Similarly, to return "rice" and "egg", we can input food[1] and food[2], respectively. The index vaule in Arrays follows one important rule: they have to be integers. But Hash index values don't have to follow this rule.
+    </p>
+    <p>
+     In fact, Hash indexes are called keys. They can be anything, including integers, floats (decimal numbers), strings, arrays, even other hashes. To make it more clear, we can use another example that's similar to the one above but with some modifications. Let's say we make a Hash called favorite_foods with key value pairs of {"Kevin" => "noodle", "Annie" => "rice", "Tao" => "egg"}. When we input favorite_foods["Kevin"], ruby will spit back "noodle". Of course, we can make the key of the Hash an integer to make it behave more like an Array. But it doesn't make sense to say 4's favorite food is "space-cake", unless you are making a reference to the popular young adult novel  <em>Divergent</em> by Veronica Roth.
+    </p>
+    <p>
+     As you can see, the way Hash organize a list of values is more expressive than that of an Array. By allowing the index, or key, to be almost anything, Hash reads more similar to plain old English than Array does. This could come in handy in things like a search engine, where the user can enter some keywords as strings, and the search program would return the value associated with that keyword. Imagine how frustrating google would be if it's indexed using integers, and to search for an item, you have to know the exact number which represents that item in google's database. Well, that would be the case if google stored everything in an Array.
+    </p>
+    </p>
+  
+    </font>
+    </article>
+    s
+   <footer>
+    <a href="https://www.facebook.com/jerbearrr">
+    <h2><font size="6"><i class="fa fa-facebook-square"></i></font></h2>
+    </a>
+    <a href="https://twitter.com/JerryChaiTea">
+    <h2 class="icon"><font size="6"><i class="fa fa fa-twitter-square"></i></font></h2>
+    </a>
+    <a href="https://www.linkedin.com/in/jerrychaitea">
+    <h2 class="icon"><font size="6"><i class="fa fa-linkedin-square"></i></font></h2>
+    </a>
+    </footer>
+    </body>
+
+</html>
