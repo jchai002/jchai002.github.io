@@ -121,8 +121,24 @@ footer {
 #pic2 {
     display:inline-block;
     height: auto;
-    width: 400px;
+    width: 450px;
     border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.date {
+    font-size: 60%;
+    color:gray;
+}
+
+.preview {
+    font-size: 90%;
+    color:#676F52;
+    width: 60%;
 }
