@@ -6,7 +6,7 @@ a {
 
 a:hover {
     text-decoration: none;
-    color: #20332c;
+    color: #676080;
 }
 
 #bloglink {
@@ -15,7 +15,10 @@ a:hover {
 }
 
 body {
-    background-color: #c7ebde;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-image: url(http://i1024.photobucket.com/albums/y309/Dreamlandmattress/webBackground_zpshj3ozcbh.jpg);
     font-family: Arial;
     color: #676F52;
     font-size: 125%;
@@ -53,7 +56,11 @@ body {
     display:block;
     height: auto;
     width: 70%;
-    background-color:#c7ebde; 
+    background-color: #DCE3E3;
+    -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    padding:25px;
     margin-left: 15%;
     margin-right: 15%;
     margin-bottom: 50px;
@@ -67,7 +74,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
-    background-color: #478e75;
+    background-color: #332E45;
     text-align: center;
 }
 
@@ -110,7 +117,7 @@ footer {
 }
 
 .sample {
-    color:Green;
+    color:orange;
     font-family: monospace;
 }
 
