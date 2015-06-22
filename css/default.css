@@ -1,3 +1,8 @@
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
 a {
     text-decoration: none;
     color: #d8f4ea;
@@ -157,13 +162,12 @@ ul
     width: 60%;
 }
 
+}
 
 
 
 
 
-
-/*
 @media (min-device-width: 800px) {
 a {
     text-decoration: none;
@@ -332,4 +336,4 @@ ul
     width: 60%;
 }
 
- }*/
+ }
