@@ -164,7 +164,7 @@ ul
 
 
 
-@media (min-width: 800px) {
+@media (min-device-width: 800px) {
 a {
     text-decoration: none;
     color: #d8f4ea;
