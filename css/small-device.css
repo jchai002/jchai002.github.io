@@ -59,6 +59,11 @@ body {
     
 }
 
+pre {
+    height: auto;
+    width: 70%;
+}
+
 table {
     display:block;
     height: 30px;
