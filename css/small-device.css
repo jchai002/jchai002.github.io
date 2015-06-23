@@ -1,4 +1,4 @@
-/*a {
+a {
     text-decoration: none;
     color: #d8f4ea;
 
@@ -157,52 +157,12 @@ ul {
     font-size: 90%;
     color:#676F52;
     width: 60%;
-}*/
-
-
-
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 11px;
-}
-p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
 }
 
-td {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-}
 
-th {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-}
 
-.medium {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; font-weight: bold;
-}
 
-.mediumwhite{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-  color: #FFF;
-}
 
-.big {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px; font-weight: bold;
-}
-
-.xbig {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-}
 
 
 
