@@ -20,7 +20,7 @@ body {
     font-size: 125%;
 }
 
-}
+
 
 .block1 {
     display:inline-block;
@@ -81,10 +81,8 @@ h2 {
     margin-left: 15%;
 }
 
-.icon {
-    color:#0f4b83;
-    display: inline-block;
-    margin-left: 20px;
+#binary {
+    color: #BECCCB;
 }
 
 h1 {
