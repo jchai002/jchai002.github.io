@@ -1,31 +1,121 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>DBC Expectations</title>
         <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 801px) and (max-width:9999px)" href="../css/default.css"/>
         <link type="text/css" rel="stylesheet" href="../css/font-awesome.css"/>
         <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 800px)" href="../css/small-device.css" />
         <link rel="stylesheet" type="text/css" href="../css/hexagons.css"> 
-        <title>CSS: Class vs. ID</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="../css/nav-style.css" type="text/css" media="only screen and (min-device-width: 801px) and (max-width:9999px)" />
+        <style type="text/css">
+            body {
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100%;
+                background-image: url(../Background/bg.jpg);
+                font-family: Arial;
+                color: #676F52;
+                font-size: 125%;
+            }
+            span.reference{
+                position:fixed;
+                left:10px;
+                bottom:10px;
+                font-size:12px;
+            }
+            span.reference a{
+                color:#aaa;
+                text-transform:uppercase;
+                text-decoration:none;
+                text-shadow:1px 1px 1px #000;
+                margin-right:30px;
+            }
+            span.reference a:hover{
+                color:#ddd;
+            }
+            ul.sdt_menu{
+                margin-top:10%;
+            }
+
+            </style>
     </head>
 
     <body>
-     <nav>
-    <table>
-    <tr>
-    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/index.html"> 
-    Home</a></font></td> 
-    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/AboutMe.html
-    ">About Me</a></font></td>
-    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/BlogMain.html
-    ">Blog</a></font></td>
-    <td width="200px"><font color="#d8f4ea"><a href="https://jchai002.github.io/Resume.html
-    ">Resume</a></font></td>
-    <td width="200px"><font color="#d8f4ea"><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact Me</a></font></td>
-    </tr>
-    </table>
-    </nav>
+        <nav>
     
-    <article class="content">
+            <ul id="sdt_menu" class="sdt_menu">
+                <li>
+                    <a href="https://jchai002.github.io/Index.html">
+                        <img src="../images/home.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Home</span>
+                            <span class="sdt_descr">Hello World</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://jchai002.github.io/AboutMe.html">
+                        <img src="../images/about-me.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">About Me</span>
+                            <span class="sdt_descr">Quick Self Introduction</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://jchai002.github.io/Resume.html">
+                        <img src="../images/resume.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Resume</span>
+                            <span class="sdt_descr">My Experiences</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">
+                        <img src="../images/4.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Contact</span>
+                            <span class="sdt_descr">Send Me An Email</span>
+                        </span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="https://jchai002.github.io/BlogMain.html">
+                        <img src="../images/6.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Blog</span>
+                            <span class="sdt_descr">Sharing My Ideas</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                        <a href="https://jchai002.github.io/BlogMain.html#May">May 2015</a>
+                        <a href="https://jchai002.github.io/BlogMain.html#June">June 2015</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="https://jchai002.github.io/Projects.html">
+                        <img src="../images/5.jpg" alt=""/>
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Projects</span>
+                            <span class="sdt_descr">What I'm Involved With</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div calls="spacer3"></div>
+
+<article class="content">
     
 
     <font color="#001b11">
@@ -47,7 +137,9 @@
     In conclusion, ID is more specific than class, and it's good practice to give each element an unique ID. I mean, you wouldn't make a bunch of copies of your ID and hand it off to a bunch of random people, because that wouldn't be...well, classy.
     </font>
     </article>
-       <div class="spacer2"></div>
+
+   <div calls="spacer3"></div>
+
     <footer>
     <span id = "binary">0111010100100101100001010011001000111011</span>
     <a href="https://www.facebook.com/jerbearrr"><span class="hb hb-xs spin-icon"><i class="fa fa-facebook"></i></span></a>
@@ -57,9 +149,13 @@
     <a href="https://plus.google.com/104729860253263081615/posts"><span class="hb hb-xs spin-icon"><i class="fa fa-google-plus"></i></span></a>
     <span id = "binary">0111010100100101100001010011001000111011</span>
     </footer>
-    <script src="../js/jquery-2.1.0.min.js"></script>
-    <script src="../js/hexagons.js"></script>
-     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5580498e13123002" async="async"></script>
+
+       <script src="../javaScript/jquery-2.1.0.min.js"></script>
+        <script src="../javaScript/hexagons.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="../javaScript/button-animation.js"></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5580498e13123002" async="async"></script>
     </body>
 
 </html>

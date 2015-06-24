@@ -20,7 +20,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    background-image: url(bg.jpg);
+    background-image: url(http://i1024.photobucket.com/albums/y309/Dreamlandmattress/webBackground_zpshj3ozcbh.jpg);
     font-family: Arial;
     color: #676F52;
     font-size: 125%;
@@ -53,24 +53,17 @@ body {
 }
 
 .content {
-    position: absolute;
-    top: 55%;
-    left: 10%;
-    display:block;
+    
+    float:left;
     height: auto;
-    width: 75%;
+    width: 60%;
     background-color: #DCE3E3;
     -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     padding:25px;
-    margin-bottom: 120px;
-    z-index: -1;
-}
-
-nav {
-    position: absolute;
-    left: 10%;
+    margin-left: 5%; 
+    margin-bottom: 10%;
 }
 
 table {
@@ -110,7 +103,6 @@ footer {
 
 #binary {
     color: #BECCCB;
-    opacity: 0;
 }
 .spacer {
     height: 20px;
@@ -119,11 +111,6 @@ footer {
 .spacer2 {
     height: 60px;
 }
-
-.spacer3 {
-    height: 40%;
-}
-
 
 .sample {
     color:brown;
@@ -158,8 +145,10 @@ footer {
     margin-right: auto;
 }
 
-#May{}
-#June{}
+ul
+{
+    list-style-type: none;
+}
 
 .date {
     font-size: 60%;
