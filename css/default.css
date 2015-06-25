@@ -1,13 +1,12 @@
 
 a {
     text-decoration: none;
-    color: #d8f4ea;
-
+    color:#87c2ed;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #676080;
+    text-decoration: underline;
+    color:#87c2ed;
 }
 
 #bloglink {
@@ -52,25 +51,54 @@ body {
     margin: 10px;
 }
 
+
+
 .content {
     position: absolute;
     top: 51%;
-    left: 10%;
-    display:block;
+    left: 0px;
+    float: left;
+    margin-left: 3%;
+    display:inline-block;
     height: auto;
-    width: 75%;
+    width: 60%;
     background-color: #DCE3E3;
     -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
-    padding:25px;
+    padding:2em;
     margin-bottom: 120px;
     z-index: -1;
 }
 
+
+
+.recent_blog {
+    position: absolute;
+    top: 130%;
+    right: 4%;
+    float: right;
+    display:inline-block;
+    height: auto;
+    width: 76%;
+    border-radius: 4px;
+    background-color: #292f33;
+    padding:2em;
+    margin-bottom: 120px;
+    z-index: -1;
+    color:#CACACA;
+}
+
+ul.recent_blog_link{
+    color:#87c2ed;
+    list-style-type: none;    
+}
+
+
 nav {
     position: absolute;
-    left: 10%;
+    left: 0px;
+    margin-left: 3%;
 }
 
 table {
@@ -94,7 +122,21 @@ h1 {
     font-family: Arial;
     color: #676F52;
 }
-
+  
+aside.twitter {
+  position: absolute;
+  display: inline-block;
+  height: 300px;
+  width: 25%;
+  right:0px;
+  float: right;
+  margin-right: 2%;
+  padding: 1em;
+  top: 49%;
+  font-size: 14px;
+  margin-bottom: 120px;
+  z-index: -1;
+  }
 
 footer {
     position: fixed;
@@ -106,6 +148,7 @@ footer {
     right: 0;
     float: left;
     clear: both;
+    z-index: 2;
 }
 
 ul
@@ -177,4 +220,19 @@ ul
 }
 
 
-
+/*
+.content_center {
+    position: absolute;
+    top: 51%;
+    left: 10%;
+    display:block;
+    height: auto;
+    width: 75%;
+    background-color: #DCE3E3;
+    -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    padding:25px;
+    margin-bottom: 120px;
+    z-index: -1;
+}*/
