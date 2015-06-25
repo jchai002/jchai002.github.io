@@ -115,16 +115,12 @@
 		</nav>
 		<div calls="spacer3"></div>
 
-<script>
-if (document.location.search.indexOf("skipmobile") >= 0) {
-document.cookie = "skipmobile=1";
-}
-else if ((document.location.hostname.match(/\.mobi$/) || screen.width < 699)
-&& document.cookie.indexOf("skipmobile") == -1)
-{
+<script type="text/javascript">
+<!--
+if (screen.width <= 800) {
 document.location = "http://jchai002.github.io/mobile/mobile-index.html";
 }
-</script>
+//-->
 </script>
 
 	<article class="content">
