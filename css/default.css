@@ -108,6 +108,11 @@ footer {
     clear: both;
 }
 
+ul
+{
+    list-style-type: none;
+}
+
 #binary {
     color: #BECCCB;
     opacity: 0;
@@ -162,7 +167,9 @@ footer {
     font-size: 60%;
     color:gray;
 }
-
+.month {
+    color:#22475e;
+}
 .preview {
     font-size: 90%;
     color:#676F52;
