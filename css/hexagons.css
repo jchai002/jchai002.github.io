@@ -709,8 +709,8 @@ inv 		= Inverse Behaver of buttons
 .hb-github,
 .hb-github:before ,
 .hb-github:after {
-	background: #373a3c;
-	border-color: #373a3c;
+	background: gray;
+	border-color: gray;
 	color: #ffffff;
 }
  
@@ -718,8 +718,8 @@ inv 		= Inverse Behaver of buttons
 .hb-github:hover:before ,
 .hb-github:hover:after {
 	background:transparent;
-	border-color: #373a3c;
-	color: #373a3c;
+	border-color: gray;
+	color: gray;
 }
  
 /* github inverts */

@@ -25,22 +25,11 @@ body {
     font-size: 125%;
 }
 
-
-.block1 {
-    display:inline-block;
-    height: 75px;
-    width: 75px;
-    margin-left: 15%;
-    margin-right: 0px;
-    border-radius: 10px;
-}
-.block2 {
-    display:inline-block;
-    height: 75px;
-    width: 75px;
-    margin-left: 20px;
-    margin-right: 0px;
-    border-radius: 10px;
+img#devhumor {
+    position: relative;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #profile {
@@ -66,7 +55,7 @@ body {
     -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     padding:2em;
-    margin-bottom: 120px;
+    margin-bottom: 5%;
     z-index: -1;
 }
 
@@ -127,7 +116,7 @@ aside.twitter {
   padding: 1em;
   top: 49%;
   font-size: 14px;
-  margin-bottom: 120px;
+  margin-bottom: 5%;
   z-index: -1;
   }
 
@@ -162,7 +151,7 @@ ul
 }
 
 .spacer3 {
-    height: 40%;
+    height: 20%;
 }
 
 
