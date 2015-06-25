@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>The Magic of Modules</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+    
+  <h1>The Magic of Modules</h1>
+  <h4>06.24.15</h4>
+    <p>
+    In a previous post, I introduced the idea of Ruby classes and inheritance. In particular, I mentioned that Ruby only allows single inheritance, meaning each class can only inherit from one single superclass. Since inheritance is a good way for newly created classes to understand a bunch of methods off the bat, this limitation seems to put Ruby at a disadvantage to other Object Oriented Languages. But that is not the case. Ruby provides another way for a class to gain access to a set of methods: modules. If you've read my previous technical blog posts, you may have noticed that I like to use pop culture references as examples to explain Ruby concepts, and this post is no exception. Today's topic: Harry Potter.</p>
+    <p>
+    As we all know, Harry is a Wizard, and Wizards are a wonderful group of people possessing magical powers. So if we want to model this relationship with Ruby, we can create a <span class="sample">Harry</span> class that inherits from the <span class="sample">Wizard</span> class:</p>
+
+    <pre class="sample">
+    class Harry
+
+        def voldemort_proof
+            return true
+        end
+
+    end
+
+    class Wizard
+
+        def use_magic
+            p "A spell is unleashed!"
+        end
+
+    end
+
+    Harry < Wizard
+    </pre>
+    <p>
+    In the above code, Harry inherited the ability to <span class="sample">use_magic</span> from the Wizard class, and we can now call this method to have Harry unleash some gnarly spells. Note that a subclass understands the methods of its superclass, but a superclass doesn't understand the methods of its subclass. Harry has the method <span class="sample">voldemort_proof</span> because he is immune to Voldemort's spells due to the protective charm his mother put on him, but not all Wizards can stand against Voldemort. If you try to call <span class="sample">voldemort_proof</span> on a random instance of the <span class="sample">Wizard</span> class, you will get a <span class="sample">NoMethodError</span>. </p>
+    <figure>
+    <img id="pic2" src ="blog-images/Potter.jpg" />
+    </figure>
+    <p>
+    When Voldemort's killing curse hit and failed to kill baby Harry, some of the Dark Lord's abilities got transferred to The Boy Who Lived. Most notably, Harry gained the parseltongue ability, which allows him to talk to snakes. We want to model this by writing parseltongue as a method in Ruby, and have Voldemort pass on that method to Harry. But we can't use inheritance here because the <span class="sample">Harry</span> class already inherits from the <span class="sample">Wizard</span> class. This is where modules come in handy:</p>
+
+    <pre class="sample">
+    module VoldemortLike
+
+        def parseltongue
+            p "SSSSsssssSSSSsssss"
+        end
+
+    end
+
+    class Harry < Wizard
+
+        include VoldemortLike
+
+        def voldemort_proof
+            return true
+        end
+    end
+    </pre>
+    <figure>
+    <img id="pic2" src ="blog-images/Parseltongue.png" />
+    </figure>
+    <p>
+    By including the <span class="sample">VoldemortLike</span> module in the <span class="sample">Harry</span> class, Mr. Potter now has the ability to speak with snakes. You may have noticed that I used nouns in class names, and adjectives in modules. This naming convention reflects the underlying purposes of classes and modules. Classes are usually used to represent objects, while modules are used to represent qualities of those objects. Flying Car, Whomping Willow, Ron, and Hermione are objects (although Hermione might not be too happy about being objectified), and they have the ability to interact and do things to each other. Flying car can <span class="sample">crash_into</span> Whomping Willow, and Ron can <span class="sample">marry</span> Hermione. In contrast, modules are used to represent qualities. <span class="sample">VoldemortLike</span> is a quality, and having this quality gives Harry the ability to use <span class="sample">parseltongue</span>. Another take home message here is that classes are designed to spawn instances of that class, while modules are designed to be included <i>into</i> a class. The wizarding world would be in serious trouble if there is a <span class="sample">Voldemort</span> class going around spawning a bunch of little <span class="sample">voldemort</span> instances.</p>
+    <figure>
+    <img id="pic2" src ="blog-images/voldermort.jpg" />
+    </figure>
+    <p>
+    While the single inheritance rule limits how class inheritance can be applied, there are no such limitations on module inclusions. Having the <span class="sample">VoldemortLike</span> module doesn't prevent <span class="sample">Harry</span> from getting other modules. For example, when Harry learned how to play quidditch, he had effectively gained some quidditch playing skills. We can write this in Ruby as such:
+
+        <pre class="sample">
+    module QuidditchSkills
+
+        def ride_broom
+            p "Flying around on a broom."
+        end
+
+        def find_snitch
+            p "Surveying the field for the Golden Snitch."
+        end
+
+    end
+
+    class Harry < Wizard
+
+        include VoldemortLike
+        include QuidditchSkills
+
+        def voldemort_proof
+            return true
+        end
+
+    end
+    </pre>
+    <figure>
+    <img id="pic2" src ="blog-images/quidditch.jpg" />
+    </figure>
+    <p>
+    There, now Harry can talk to a snake while flying around on a broomstick looking for a magical ping-pong ball. Well, I guess it's pretty ridiculous when you put it that way. But the power of modules is no joking matter. They essentially provide a way to give large sets of methods to multiple existing classes with a single measly line of code. This is why modules are, quite frankly, magical.</p>
+    
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Projects.html">Projects</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>Ruby Classes: How to be Classy like Tony Stark</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+ <h1>Ruby Classes: How to be Classy like Tony Stark</h1>
+  <h4>06.17.15</h4>
+
+
+
+    <p>
+    What is a ruby class? No, it's not a course about a precious stone at your local community college. In Ruby, a class is a useful way to organize multiple methods and objects. Ruby classes is a broad subject, with many features like class variables, class methods, instance variables, etc. In this post, I will focus on the basics of class creation, how to make an instance of that class, and how to make instance methods. I will also introduce the concept of class inheritance and how to use it.
+    </p>
+    <p>
+    Using classes, you are able to easily spawn multiple objects that share properties. A new object created through a class is called an instance of that class. As usual, I will make things easier via examples.
+    lets say we want to make a new class called <span class="sample">Ironman</span> (by convention, class names are Captialized), we would type:</p>
+    <pre class="sample">
+    class Ironman
+        def initialize(name)
+            puts "J.A.R.V.I.S Says: Hello #{name}"
+        end
+    end
+    </pre>
+    <p>
+    And we can create an instance of the <span class="sample">Ironman</span> class like this:</p>
+    <pre class="sample">tony_stark = Ironman.new("Tony Stark")</pre>
+    <p>
+    When we created a new instance of the <span class="sample">Ironman</span> class by calling <span class="sample">Ironman.new</span>, we made a new <span class="sample">Ironman</span> object called <span class="sample">tony_stark</span>, and we see J.A.R.V.I.S greeting him. But so far <span class="sample">tony_stark</span> doesn't do anything, so let's add some methods to the Ironman class:</p>
+       <pre class="sample">
+    class Ironman
+        def initialize(name)
+            puts "J.A.R.V.I.S Says: Hello #{name}"
+        end
+
+        def repulsor_beam
+            puts "Pew Pew PEWWW"
+        end
+
+        def insult
+            puts "Your are a ginormous !!@$@!$!@#"
+        end
+    end
+    </pre>
+    <p>
+    now when we call <span class="sample">tony_stark.repulsor_beam</span>, the console will print <span class="sample">"Pew Pew PEWWW"</span>, and when we call <span class="sample">tony_stark.insult</span>, well...you get the gist. The methods <span class="sample">repulsor_beam</span> and <span class="sample">insult</span> are instance methods, and any instance of <span class="sample">Ironman</span> will know how to use them. If I make another <span class="sample">Ironman</span> object called <span class="sample">jerry_chai</span>, then <span class="sample">jerry_chai</span> will be able to shoot repulsor beams and call you names.</p>
+    <figure>
+    <img id="pic2" src ="http://www.vitamin-ha.com/wp-content/uploads/2012/05/VH-iron-man-meme.jpg" />
+    </figure>
+    <p>
+    But alas, there can't be more than one Ironman, and poor Tony is lonely, so lets make a few more avengers for him to play with.</p>
+    <pre class="sample">
+    class Thor
+        def initialize
+            puts "Fear not Midgard, the mighty Thor is here!"
+        end
+
+        def hammer_toss
+            puts "KLUNK!"
+        end
+
+        def lightning
+            puts "KA-BOOOOOM!!!"
+        end
+    end
+
+    class Hulk
+        def initialize
+            puts "I'm getting angry. You wouldn't like me when I'm angry."
+        end
+
+        def smash
+            puts "HULK SMMAAASSSHHHH!!"
+        end
+    end
+    </pre>
+    <p>
+    There, now we just need to thaw Captain America from that block of ice and we can form the Avengers. But wait, what if we want to have a method that all the Avengers know how to use? We can add it to each of the three classes we made, but that's a lot of copying and pasting. This is where inheritance comes in handy. But first, lets make the Avengers class:</p>
+      <pre class="sample">
+    class Avengers
+        def initialize
+        end
+
+        def assemble
+            puts "Avengers! Assemble!"
+        end
+    end
+    </pre>
+    <p>
+    Now we can have the three Avengers inherit from the Avengers class:</p>
+    <pre class="sample">
+    Ironman < Avengers
+    Thor < Avengers
+    Hulk < Avengers
+    </pre>
+    <p>
+    And now all three classes will know how to use the <span class="sample">assemble</span> method. I mean, the Hulk probably wouldn't use it much, but it's there if he wants it. In this context, <span class="sample">Avengers</span> is a superclass of <span class="sample">Hulk</span>, and <span class="sample">Hulk</span> is a subclass of <span class="sample">Avengers</span>. Ruby differs from some other object oriented languages in that it does not allow one class to inherit from multiple classes. So if <span class="sample">Thor</span> wants to be a member of the <span class="sample">Avengers</span> class, he can't also be a member of the <span class="sample">Asgardian</span> class. Sorry Thor, sometimes you just gotta choose.</p>
+     <figure>
+    <img id="pic2" src ="https://s-media-cache-ak0.pinimg.com/736x/d5/d0/16/d5d016862261a10cc37b4ca55937eeba.jpg" />
+    </figure>
+    <p>
+    Classes and inheritance are useful tools that give structure to your code. But be sure to think ahead when you are organizing your classes. Badly organized classes make it harder to read your code, which makes debugging and updating your program an utter nightmare. Kind of like how the Avengers is a nightmare for their enemeies.</p>
+    <img id="pic2" src =" http://static.tumblr.com/l5okivj/5FMm414ty/avengers_movie.jpg" />
+    
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Projects.html">Projects</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>

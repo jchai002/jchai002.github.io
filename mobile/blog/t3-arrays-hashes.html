@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>Ruby: Array vs. Hash</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+  <h1>Ruby: Array vs. Hash</h1>
+  <h4>06.05.15</h4>
+
+    <p>
+     Ruby has several classes of objects to collect multiple items in one object, two of these classes are Array and Hash. They both share some methods, while some methods are unique to one or the other. However, the most important distinction between Array and Hash is the way they are indexed. 
+    </p>
+    <p>
+     Indexing is a way to organize multiple items which makes it easier for them to be accessed. It's probably better to explain indexing using an example. Here we will use an Array. Let's assume that we have an Array called <span class="sample">foods</span>, which contains three items in the form of strings: <span class="sample">"noodle"</span>, <span class="sample">"rice"</span>, and <span class="sample">"egg"</span>. The Array would look like this: 
+     </p>
+    <p class="sample">foods = ["noodle", "rice", "egg"].</p>
+    <p>
+     If we want ruby to return us the string <span class="sample">"noodle"</span>, we can type <span class="sample">foods[0]</span>. Here, <span class="sample">"0"</span> is the index value that represents <span class="sample">"noodle"</span> in this Array. In computer science, people like to start counting at 0, which is why 0 actually represents the first item in the Array. Similarly, to return <span class="sample">"rice"</span> and <span class="sample">"egg"</span>, we can input <span class="sample">foods[1]</span> and <span class="sample">foods[2]</span>, respectively. The index vaule in Arrays follows one important rule: they have to be integers. But Hash index values don't have to follow this rule.
+    </p>
+    <p>
+     In fact, Hash indexes are called keys. They can be anything, including integers, floats (decimal numbers), strings, arrays, even other hashes. To make it more clear, we can use another example. Let's say we want to make a Hash called favorite_foods, we can set the key as a person's name, and set the value as their favorite food. We can create the Hash like this:
+     </p>
+      <p class="sample">favorite_foods = {"Kevin" => "noodle", "Annie" => "rice", "Tao" => "egg"} </p> 
+      <p>
+      When we input <span class="sample">favorite_foods["Kevin"]</span>, ruby will spit back <span class="sample">"noodle"</span>. Of course, we can make the key of the Hash an integer to make it behave more like an Array. But it doesn't make sense to say 4's favorite food is "space-cake", unless you are making a reference to the popular young adult novel  <em>Divergent</em> by Veronica Roth.
+    </p>
+    <p>
+     As you can see, the way Hash organize a list of values is more expressive than that of an Array. By allowing the index, or key, to be almost anything, Hash reads more similar to plain old English than Array does. This could come in handy in things like a search engine, where the user can enter some keywords as strings, and the search program would return the value associated with that keyword. Imagine how frustrating google would be if it's indexed using integers, and to search for an item, you have to know the exact number which represents that item in google's database. Well, that would be the case if google stored everything in an Array.
+    </p>
+    
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Projects.html">Projects</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>

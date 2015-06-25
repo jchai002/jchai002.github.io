@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>Ruby Enumerable Methods: A Force To Be Reckoned With</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+  <h1>Ruby Enumerable Methods: A Force To Be Reckoned With</h1>
+  <h4>06.11.15</h4>
+    <p>
+    In my last tech blog post, I talked about the most commonly used collection classes in Ruby, Arrays and Hashes. Ruby has numerous enumerable methods that allows us to manipulate these collections in batch by harnessing the power of iteration (which is just a fancy way to say doing the samething to multiple items in a list). In this article, I will go into detail about one of my favorite enumerable methods: the <span class="sample">map</span> method.
+    </p>
+    <p>
+    The <span class="sample">map</span> method is built upon the <span class="sample">each</span> method, which does something to each item in a collection. In particular, this method "maps over" each item in the collection with something new. It's important to distinguish <span class="sample">map</span> from <span class="sample">each</span>. They have different return values, which is what the program spit back at you after you run it. The <span class="sample">each</span> method returns the receiver, which means it doesn't save its results and give you back exactly what you put into it. The <span class="sample">map</span> method, on the other hand, does save whatever changes you made to the collection items, and it returns the new value to you. Basically, <span class="sample">each</span> is  like the TSA X-ray bag scanner, your bag goes in and comes out unmodified, even though technically something was done to it (it was exposed to X-rays). Whereas <span class="sample">map</span> is more like a car wash, your car goes in covered with all the grime and dead bugs from your SF-LA drive on Interstate 5, and comes out all bright and shiny. </p>
+    <p>
+    To demonstrate how <span class="sample">map</span> works, we will look at a quick example. Like many other geeky science people, I love the Star Wars franchise, so I decided to make a list of my favorite Star Wars characters and save them in an array.</p>
+    <p class="sample">arr = ["luke", "yoda", "leia", "hans","chewie"]</p>
+    <p>
+    That looks nice, but...oh no, I forgot to capitalize the names! Ms. Perez from 7th grade English would throw a fit if she saw this, so I'd better fix it. But I'm too lazy to to go back to the list and manually change the first letter a whooping 5 times, so I'm going to use <span class="sample">map</span>. Here is how:</p>
+
+    <p class="sample">arr2 = arr.map do |name| name.capitalize end</p>
+    <p>
+    And I get:
+    </p>
+    <p class="sample">["Luke", "Yoda", "Leia", "Hans","Chewie"]</p> 
+    <p>
+    I've taken each name and called the capitalize method on it, and I was returned with the capitalized version of each name. You may have noticed that I put the results in a new array called <span class="sample">arr2</span>, because I want to save this new list so I can access it later at my leisure. If we want to write over the original list in <span class="sample">arr</span>, we can use the destructive version of <span class="sample">map</span> by calling <span class="sample">map!</span> on <span class="sample">arr</span>, which modifies the values in place and save the new value in the original array. But I didn't do that because I never know when I might need the original list again. Besides, it makes sense that <span class="sample">arr2</span> would contain <span class="sample">"Leia"</span>, after all, arr2-dee2 did carry a hologram version of Princess Leia in the original Star Wars series (you see what I did there? *wink* *wink*). 
+    </p>
+    <img id="pic" src ="http://static.guim.co.uk/sys-images/Environment/Pix/columnists/2010/11/3/1288804802871/Hologram-of-Princess-Leia-007.jpg" />
+    <p>
+    As you can see, <span class="sample">map</span> is a very powerful tool that allows us to accomplish tasks that would otherwise be extremely boring and time consuming. In my example I had to do a very simple operation on 5 items. But what if I need to to a very complicated overation on Hundreds or even Thousands of items? Thats where the value of <span class="sample">map</span> becomes, well, invaluable. We've also talked about the destructive version of <span class="sample">map</span>, <span class="sample">map!</span>. But make sure to check yo self before you wreck yo self with <span class="sample">map!</span>, because using it irresponsibly could cause a lot of headache. As yoda would say:"Use it with care, you must." Now go out there and have some fun with <span class="sample">map</span>, young Padawan, and may the force be with you!</p>
+    <img id="pic" src ="http://img1.wikia.nocookie.net/__cb20130906153257/starwars/images/9/9b/Yoda_SWG_by_Steven_Ekholm.JPG" />
+    
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Projects.html">Projects</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>
