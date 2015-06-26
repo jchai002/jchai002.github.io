@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CSS: Class vs. ID</title>
+        <title>The Magic of Modules</title>
         <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 801px) and (max-width:9999px)" href="../css/default.css"/>
         <link type="text/css" rel="stylesheet" href="../css/font-awesome.css"/>
         <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 800px)" href="../css/small-device.css" />
@@ -43,6 +43,7 @@
     </head>
 
     <body>
+
         <nav>
     
             <ul id="sdt_menu" class="sdt_menu">
@@ -114,28 +115,39 @@
             </ul>
         </nav>
         
-
+  
 <article class="content">
-    
-
     <font color="#001b11">
-  <h1>CSS: Class vs. ID</h1>
-  <h4>05.30.15</h4>
+  <h1>Frowning away the Stereotype Threat</h1>
+  <h4>06.25.15</h4>
+  <p>
+    When I first started looking into the tech industry a few months ago, I stumbled up on an article about an female software engineering quiting Amazon because she found the work environment unwelcoming. A quick google search returns tons of articles mentioning this problem women face in tech. This was eye opening for me and somewhat surprising for me. I've always known that there are more dudes than gals in the tech industry, but I thought it was because a lot of us guys were socially awkward teenagers who spent a lot of time playing on computers and subsequently fell in love with the machines. That may explain part of the puzzle, but another part is that women in tech have to deal with this thing called stereotype threat.</p>
+  <figure>
+    <img id="pic" src ="blog-images/nerd.png" />
+    <figcaption>The nerdy programmer stereotype</figcaption>
+    </figure>
+  <p>
+  So what is stereotype threat? To sum it up in one sentence, it's when a member of a certain group feels judged due to the stereotype pertaining to that group. And women in tech feel threatened and anxious in their work environment because there is a stereotype that women are bad at math, and tech jobs require a lot of math. When they are worried that men are expecting and even waiting for them to make a mistake, they get nervous and their work performances suffer. This makes sense, I mean, who could possibly perform well when they think others are breathing down their neck, judging every move they make? Stereotype threat is a vicious cycle, it's detrimental to the performance of the people it affects, which in turn reinforces the stereotype.</p>
+     <figure>
+    <img id="pic" src ="blog-images/sexism.jpg" />
+    </figure>
+    </figure>
+  <p>
+  I have only been exposed to the tech industry for a short time, but my personal experience tells me that women are just as good as men when it comes to coding. I have been pair programming with quite a few fellow Dev Boot Camp students lately, and every coder gal I worked with was very smart and came up with amazingly creative solutions. And this is true not just for the tech industry, most of the girls I met in medical school were also brilliant at what they do, and medicine is one of the most intellectually demanding field out there. So I'm not sure where this negative stereotype that female techies face came from, but alas, it does exist, so we have to take charge and fix it.</p>
+  <p>
+  It's no simple task to stop a stereotype, because a big part of the problem lies with the culture. When I lived in a small town in Pennsylvania, I would occasionally come across racist bigots who would call me "Chinaman," and they would tell me to "go back to China." By the way calling someone "Chinaman" is such a lazy way to be racist, they literally put a country before the word "man," but I digress. My point is, I've almost never had to deal with this problem in California. That kind of behavior is just more frowned upon where I grew up, but this is not the case in small town Pennsylvania. The guy who called me "Chinaman" probably grew up in an environment where it's okay to be racist. He would make racist jokes among his friends, and heckle minorities as they walk by. None of his peers judged him for being racist, in fact, it was probably the fashionable thing to do. But the fault lies with the individual as well, for he had the power to rise above the limitations of his environment, he can choose to not conform to a destructive culture, all he had to do is to refuse to participate, and maybe frown a little bit when his friends make racist remarks.</p>
+   <figure>
+    <img id="pic2" src ="blog-images/frown.jpg" />
+    <figcaption>All you gotta do is frown</figcaption>
+    </figure>
+  <p>
+  In fact, frowning is quite a powerful tool when it comes combating stereotypes. The civil rights activist Stetson Kennedy, who singlehandedly destroyed the KKK from the inside, introduced the term "Frown Power." The concept is simple, all you had to do was to frown when someone uses the "N-Word." The act might be simple, but it gained momentum over time. Slowly but surely the derogatory term went out of fashion, in fact, today the "N-Word" is straight up taboo. So maybe we can use the same technique to combat other stereotypes. The current tech culture might not be so welcoming to women, but we can change that. All we have to do is to maybe frown a little bit when someone tells you: "I'm not going to trust her with that project because she is a girl and will probably mess it up." If we do that, I'm sure this stereotype threat will slowly erode over time, and will eventually be eradicated.</p>
+   <figure>
+    <img id="pic" src ="blog-images/stetson.jpg" />
+    <figcaption>Stetson Kennedy infiltrated and brought down the KKK</figcaption>           
+    </figure>
 
-    <p>
-      At first glance, there doesn't seem to be any difference between Class and ID. Both of them can be assigned to HTML elements as behavior modifiers. I thought that ID's can only be assigned to one element, but that's not the case either. There is nothing in the HTML and CSS languages to prevent the same ID being assigned to multiple elements. The only difference between Class and ID comes down to specificity, which led to certain conventions in their usage.
-    </p>
-    <p>
-    What is specificity, you ask? To put simply, it decide who the HTML element listens to. If Class and ID are a divorced couple, each telling different things to their child aka the HTML element, then ID would win because it is more specific. Okay, that might be a confusing analogy, it's probably better to use an example.
-    </p>
-    <p>
-    Let's say that we have 3 seperate div tags, and we assign each of them with the class "square," and we give each of them the ID "block1," "block2," and "block3" respectively. If we modify the CSS and give the "square" class a width and height of 100px, and a background-color of red, then all 3 divs would become red 100px * 100px squares. If I then modify the CSS for the "block1" ID and give it a background-color of "blue," then the first div would turn blue while the other two remains red. Because the background-color property of the first block was described by both its Class and ID, the vaule in the ID over-rides the value in the Class because ID is more specific.
-    </p>
-    <p>
-    A good rule of thumb regarding the usage of Class and ID is to make sure each HTML element has an unique ID, that is, do NOT assign the same ID to multiple elements. Although there is nothing preventing you from being a rebel and give the same ID to different elements, its not good practice to do so. Just because there is nothing physically preventing me from flipping off every person I meet, doesn't mean that I should walk up to the next police officer I see and give him the bird. Besides, there are situations where we might want to modify the style of a certain element individually. In the example above, let's say that we gave all three divs the ID "block1," and at some point we want to change one of to a rectangle, we can't simply edit the width and height property in the #block1 CSS code, because it would make all 3 divs into rectangles. If we do want to edit all 3 divs at once, then we are better off giving them the same Class and edit that instead.
-    </p>
-    In conclusion, ID is more specific than class, and it's good practice to give each element an unique ID. I mean, you wouldn't make a bunch of copies of your ID and hand it off to a bunch of random people, because that wouldn't be...well, classy.
-    </font>
+
      </article>
     
     <aside class ="twitter">
@@ -174,15 +186,13 @@
     <a class="twitter-timeline" href="https://twitter.com/JerryChaiTea" data-widget-id="613950399574204416" height ="400px">Tweets by @JerryChaiTea</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</aside>
-   
- 
 
-       <script src="../javaScript/jquery-2.1.0.min.js"></script>
-        <script src="../javaScript/hexagons.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-        <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="../javaScript/button-animation.js"></script>
-        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5580498e13123002" async="async"></script>
+    <script src="../javaScript/jquery-2.1.0.min.js"></script>
+    <script src="../javaScript/hexagons.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../javaScript/button-animation.js"></script>
+        <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widgetjs#pubid=ra-5580498e13123002" async="async"></script>
     </body>
-
+    
 </html>
