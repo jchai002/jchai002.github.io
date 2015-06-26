@@ -50,7 +50,7 @@ img#devhumor {
     display:inline-block;
     height: auto;
     width: 60%;
-    background-color: #828D93;
+    background-color: #BFDCF2;
     -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
     box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
@@ -186,7 +186,7 @@ ul
 
 .date {
     font-size: 60%;
-    color:#CFCEBD;
+    color:#256799;
 }
 .month {
     color:#22475e;
