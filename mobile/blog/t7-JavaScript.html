@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>Getting Loopy with Heisenberg</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+    
+  <h1>Getting Loopy with Heisenberg</h1>
+  <h4>07.09.15</h4>
+  <p>
+  In a previous post, I talked about the concept of Ruby iterators, which allows us to work on every single element of a collection. Javascript doesn't have the plethora of built in iterator methods like Ruby, but we can still achieve some of the same goals using the all powerful <span class="sample">for</span> loop. But first, lets quickly review Ruby iterators. Today I will take my examples from the popular TV series Breaking Bad. In Breaking Bad, the protagonist Walter White is a drug kingpin with a lot of bad-ass quotes. If we want him to spit out all of his lines at once, we can collect his best quotes and save it in an array, then we can iterate over this array with <span class="sample">each</span>:
+  <pre class="sample">
+  quotes = ["Say my name", "You're goddamn right", "I'm the one who knocks"]
+  quotes.each {|x| puts "Walter says: " + x}
+  </pre>
+    <figure>
+    <img id="pic2" src ="blog-images/goddamn.png" />
+    </figure>
+  <p>
+  This code would make Heisenberg say all of his most powerful lines at once, which kinda make then lose their dramatic effect, but oh well. We can do the same thing using Javascript, but to keep it fresh, lets have Mr. White do something else. Now, in the ruthless business of drug dealing, Walter met a lot of people that he had to...get rid of. So let's have him murder his victims with Javascript:
+  </p>
+  <pre class="sample">
+  var victims = ["Lydia Rodarte-Quayle", "Mike Ehrmantraut", "Gus Fring"]
+  for (var i = 0; i < victims.length; i++) {
+  console.log("Walter killed " + victims[i])
+  }
+  </pre>
+  <p>
+  This code would loop over the array called <span class="sample">victims</span> and print out each element in the array. The <span class="sample">for</span> loop is broken down into the condition and the body. The condition is inside the parenthesis: <span class="sample">(var i = 0; i < victims.length; i++)</span>. It states the index number of the beginning and the end of the loop, from <span class="sample">0</span> to a value less than <span class="sample">victims.length</span>, which is <span class="sample">2</span> in this case since the array is three elements long. The last part tells the loop how to increment the index number. and <span class="sample">i++</span> means tell Javascript to add 1 to the index number for each iteration. The body of the loop is inside the curly braces, and this is the code that is executed for each iteration. In our example, Javascript will print out the string <span class="sample">"Walter killed "</span> along with the name of each victim.
+  </p>
+  <figure>
+    <img id="pic2" src ="blog-images/bitch.jpg" />
+</figure>
+  <p>
+  Ruby also has a <span class="sample">for</span> loop, but it is not as flexible as Javascript's <span class="sample">for</span> loop. We can easily manipulate a Javascript <span class="sample">for</span> loop by changing the conditions. For example, if Heisenberg is feeling merciful and decided to only kill every other victim, we can just change the <span class="sample">i++</span> to <span class="sample">i+=2</span>. This way, the body of the loop is only executed for index 0 and index 2 of the array, sparing Mike, who happens to be one of my favorite characters on the show.
+  </p>
+   <figure>
+    <img id="pic2" src ="blog-images/heisenberg.jpg" />
+    </figure>
+  <p>
+  Not everyone can be a hard-boiled criminal like Heisenberg, but we have the Javascript <span class="sample">for</span> loop, which is arguably even more bad-ass. With that in mind, I leave you with a super cool breaking bad theme song remix.
+  </p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/nsYg1uXgdug" frameborder="0" allowfullscreen></iframe>
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Music.html">Music</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>
