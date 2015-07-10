@@ -73,8 +73,30 @@ body {
 	background-color: blue;
 }
 
-.spacer {
-	display: block;
-	height: 20px;
-	width: 100%;
+/*#iron_man {
+	text-align:center;
+	color:white;
+	float:left;
+	clear:left;
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	margin-left: 200px;
+	border-width: 3px;
+	border-style: solid;
+    border-color: white;
 }
+
+#hulk {
+	text-align:center;
+	color:white;
+	float:right;
+	clear:right;
+	height: 100px;
+	width: 100px;
+	background-color: black;
+	margin-right: 200px;
+	border-width: 3px;
+	border-style: solid;
+    border-color: white;
+}*/

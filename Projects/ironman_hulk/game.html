@@ -11,7 +11,7 @@
 <img class="ironman" src="ironman.gif" />
 <img class="hulk" src="hulk.gif" />
 </div>
-<div class="spacer"></div>
+
 <div class = 'attack_iron'>
 <button  onclick="getElementById('status').innerHTML=attack(iron_man,hulk)">Attack</button>
 </div>
@@ -19,13 +19,15 @@
 <button  onclick="getElementById('status').innerHTML=attack(hulk, iron_man)">Attack</button>
 </div>
 </div>
-<div class="spacer"></div>
 <div class = 'heal_iron'>
 <button onclick="getElementById('status').innerHTML=heal(iron_man)">heal</button>
 </div>
 <div class = 'heal_hulk'>
-<button onclick="getElementById('status').innerHTML=heal(hulk)">heal</button>
+<button onclick="getElementById('status').innerHTML=heal(hulk)" >heal</button>
 </div>
+<!-- 
+<div id="iron_man"></div>
+<div id="hulk"></div> -->
 </body>
 
 
