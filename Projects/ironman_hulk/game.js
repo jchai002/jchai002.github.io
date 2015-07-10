@@ -40,6 +40,44 @@ $(document).ready(function() {
     });
 });
 
+       $(document).ready(function() { 
+        var obj = document.createElement("audio"); 
+        obj.setAttribute("src", "hulkhit.mp3")
+        $.get(); 
+
+        $(".attack_hulk").click(function() { 
+            obj.play(); 
+        }); 
+    }); 
+
+        $(document).ready(function() { 
+        var obj = document.createElement("audio"); 
+        obj.setAttribute("src", "Ironmanhit.mp3")
+        $.get(); 
+
+        $(".attack_iron").click(function() { 
+            obj.play(); 
+        }); 
+    }); 
+
+           $(document).ready(function() { 
+        var obj = document.createElement("audio"); 
+        obj.setAttribute("src", "heal.mp3")
+        $.get(); 
+
+        $(".heal_iron").click(function() { 
+            obj.play(); 
+        }); 
+    }); 
+              $(document).ready(function() { 
+        var obj = document.createElement("audio"); 
+        obj.setAttribute("src", "heal.mp3")
+        $.get(); 
+
+        $(".heal_hulk").click(function() { 
+            obj.play(); 
+        }); 
+    }); 
 
 //logic
 
