@@ -1,0 +1,26 @@
+
+body {
+
+    background-image: url("ironman-vs-hulk-final.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: cover;
+}
+
+
+
+#title {
+	display: block;
+	margin-left: 12%;
+	margin-right:auto;
+	margin-top:10%;
+}
+
+#click {
+	display: block;
+	margin-left:27%;
+	margin-right:auto;
+	margin-top:30%;
+}
+

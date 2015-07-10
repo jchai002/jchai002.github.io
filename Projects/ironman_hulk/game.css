@@ -1,0 +1,80 @@
+.ironman {
+	position: relative;
+	float:left;
+	left:0;
+}
+
+.hulk {
+	position: relative;
+	float:right;
+	right:0;
+}
+
+body {
+
+    background-image: url("coliseum.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    background-size: cover;
+}
+
+.battle {
+	margin-top:10%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+#status {
+	color: white;
+	text-align:center;
+	display: block;
+	padding-top: 20px;
+	margin-top:10%;
+	height: 60px;
+	width: 400px;
+	margin-left: auto;
+	margin-right:auto;
+	background-color: black;
+	border-width: 3px;
+	border-style: solid;
+    border-color: white;
+}
+
+.attack_iron {
+	margin:20px;
+	margin-left: 60px;
+	float:left;
+	clear:left;
+	background-color: blue;
+}
+
+.heal_iron {
+	margin:20px;
+	margin-left: 60px;
+	float:left;
+	clear:left;
+	background-color: blue;
+}
+
+.attack_hulk {
+	margin:20px;
+	margin-right: 60px;
+	float:right;
+	clear:right;
+	background-color: blue;
+}
+
+.heal_hulk {
+	margin:20px;
+	margin-right: 60px;
+	float:right;
+	clear:right;
+	background-color: blue;
+}
+
+.spacer {
+	display: block;
+	height: 20px;
+	width: 100%;
+}
