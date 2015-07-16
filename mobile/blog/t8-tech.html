@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=3.0;">
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <title>Static vs. Dynamic Typing</title>
+    </head>
+<body>   
+    <div class="content">
+        <article class="underline">
+  <h1>Static vs. Dynamic Typing</h1>
+  <h3>Sometimes you have to (overly) attach the variable type</h3>
+  <h4>07.15.15</h4>
+  <p>
+  Since I'm getting into programming from another field, I was never exposed to many of the more fundamental computer science concepts (and there are A LOT of concepts in this field). The thing is, in a field that is already huge and still growing as we speak, we may never need a very deep understanding of certain topics. I'm a big proponent of learning only what you need. Going deep is the domain of academics and porn stars, and as most us who went through four years of college knew, academia doesn't provide a lot of practical knowledge. That being said, having some exposure to basic computer science concepts are definitely very helpful in terms of providing context for the practical skills. So in this article I will scratch the surface of a fundamental CS topic: dynamic and static typing.
+  </p>
+  <p>
+   Programming languages can be either dynamically or statically typed. Dynamic typing means when you declare a variables, you don't have to specify what type the variable has to be (string, array, integers, floats, etc.). So both JavaScript and Ruby are dynamically typed. To declare a variable in JavaScript, we simply do:</p>
+   <pre class="sample">
+   var forever_alone = true;
+   console.log(typeof forever_alone); //-->"boolean"
+   </pre>
+    <figure>
+    <img id="pic_small" src ="blog-images/alone.jpg" />
+    </figure>
+   <p>
+   As we can see, the <span class="sample">forever_alone</span> variable is automatically considered an boolean, this is verified by the result of calling <span class="sample">typeof</span> on <span class="sample">forever_alone</span>. Variable declaration is even simpler in Ruby, where we don't even have to type <span class="sample">var</span>:</p>
+   <pre class="sample">
+    cats = ["Grumpy Cat", "Nyan Cat", "Keyboard Cat"]
+    puts cats.class #-->Array
+   </pre>
+    <figure>
+    <img id="pic_wide" src ="blog-images/cats.jpg" />
+    </figure>
+   <p>
+   Just like in JavaScript, we didn't specifically say what type of values <span class="sample">cats</span> contains, but <span class="sample">cats</span> is automatically treated as an Array.
+   </p>
+   <p>
+   But in a statically typed language like C++, the type of a variable must be declared before we assign a value to it, and that value must fit the type we specified. For example, we have to declare the type of a variable as an integer like this:</p>
+   <pre class="sample">
+    int number_of_boyfriend;
+    number_of_boyfriend = 0;
+   </pre>
+    <figure>
+    <img id="pic2" src ="blog-images/girlfriend.gif" />
+    </figure>
+   <p>
+   Static typing seems like a hassle, the code is more verbose and annoying to type, so why do people design languages with static typing? The explanation for this can get fairly complex, so I will only give a very surface level answer here. Basically, static typing makes it easier for compilers to catch errors during compile time. But hold up, what are compilers? Well, compiling basically means that the source code (the code that we programmers write) are translated into the native machine code, which is made up of zeros and ones, before the code is ran. Usually, the compiling process produces an executable file that the end user can use to run the program. Many of the older programming languages like C++ and Java are compiled languages. Since some variables might not be used until the program is run, in order for the compiler to make sense of a certain variable, the variable's type must be explicitly stated. The newer languages like Ruby and JavaScript are interpreted languages, the source code in these languages are put through an interpreter and ran directly without being compiled first. If a wrong variable type is used somewhere in the program, an error will be raised while the program is being ran. Since the error will be detected even without declaring the variable type, there is no need for type declaration, and this saves the programmer a lot of time.</p>
+   <p>
+   Most of us don't really think about how the computer treats the source code we write, we simply follow the syntactic rules of whatever language we are using, but understanding a bit of what's going on under the hood could help us comprehend why our code is behaving a certain way. At the end of the day, we should be thankful that programmers before us designed all these higher level languages so we don't have enter the binary code directly into the machine, which would make a simple type declaration seem like a piece of cheeseburger.</p>
+    <figure>
+    <img id="pic2" src ="blog-images/cheese.jpg" />
+    </figure>
+    </article>
+    </div>
+    <nav class="vertical menu">
+        <ul>
+                <li><a href="../index.html">Home page</a></li>
+                <li><a href="../AboutMe.html">About Me</a></li>
+                <li><a href="../Resume.html">Resume</a></li>
+                <li><a href="../BlogMain.html">Blog</a></li>
+                <li><a href="mailto:jchai002@gmail.com?Subject=Hello" target="_top">Contact</a></li> 
+                <li><a href="../Projects.html">Projects</a></li>
+        </ul>
+    </nav> 
+    <footer>
+        <p class="copy">&copy; 2015 jchai002.github.io | All Rights Reserved &bull; Design By&nbsp;&nbsp;<a href="http://www.mobifreaks.com" title="Design By Mobifreaks.com">Mobifreaks.com</a></p>
+    </footer>
+</body>
+</html>
