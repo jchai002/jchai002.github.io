@@ -57,6 +57,7 @@ img#devhumor {
     padding:2em;
     margin-bottom: 5%;
     z-index: -1;
+    border-radius: 6px;
 }
 
 
@@ -219,6 +220,47 @@ figure {
     color: #442F4F;
     font-family: sans-serif;
 }
+
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    width: 85%;
+    margin: 0.25em 0;
+    padding: 0.25em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+    background:#ececec;
+    -webkit-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    -moz-box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    box-shadow: 5px 5px 8px 0px rgba(59,59,59,1);
+    border-radius: 6px;
+}
+
+blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+  
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}
+
 /*
 .content_center {
     position: absolute;
