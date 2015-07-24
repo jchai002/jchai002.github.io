@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CSS: Class vs. ID</title>
+        <title>The Evolution of My Website</title>
         <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 801px) and (max-width:9999px)" href="../css/default.css"/>
         <link type="text/css" rel="stylesheet" href="../css/font-awesome.css"/>
         <link rel="stylesheet" type="text/css" media="only screen and (max-device-width: 800px)" href="../css/small-device.css" />
@@ -120,29 +120,34 @@
             </ul>
         </nav>
         
-
+        
 <article class="content">
-    
-
     <font color="#001b11">
-  <h1>CSS: Class vs. ID</h1>
-  <h4>05.30.15</h4>
 
-    <p>
-      At first glance, there doesn't seem to be any difference between Class and ID. Both of them can be assigned to HTML elements as behavior modifiers. I thought that ID's can only be assigned to one element, but that's not the case either. There is nothing in the HTML and CSS languages to prevent the same ID being assigned to multiple elements. The only difference between Class and ID comes down to specificity, which led to certain conventions in their usage.
-    </p>
-    <p>
-    What is specificity, you ask? To put simply, it decide who the HTML element listens to. If Class and ID are a divorced couple, each telling different things to their child aka the HTML element, then ID would win because it is more specific. Okay, that might be a confusing analogy, it's probably better to use an example.
-    </p>
-    <p>
-    Let's say that we have 3 seperate div tags, and we assign each of them with the class "square," and we give each of them the ID "block1," "block2," and "block3" respectively. If we modify the CSS and give the "square" class a width and height of 100px, and a background-color of red, then all 3 divs would become red 100px * 100px squares. If I then modify the CSS for the "block1" ID and give it a background-color of "blue," then the first div would turn blue while the other two remains red. Because the background-color property of the first block was described by both its Class and ID, the vaule in the ID over-rides the value in the Class because ID is more specific.
-    </p>
-    <p>
-    A good rule of thumb regarding the usage of Class and ID is to make sure each HTML element has an unique ID, that is, do NOT assign the same ID to multiple elements. Although there is nothing preventing you from being a rebel and give the same ID to different elements, its not good practice to do so. Just because there is nothing physically preventing me from flipping off every person I meet, doesn't mean that I should walk up to the next police officer I see and give him the bird. Besides, there are situations where we might want to modify the style of a certain element individually. In the example above, let's say that we gave all three divs the ID "block1," and at some point we want to change one of to a rectangle, we can't simply edit the width and height property in the #block1 CSS code, because it would make all 3 divs into rectangles. If we do want to edit all 3 divs at once, then we are better off giving them the same Class and edit that instead.
-    </p>
-    In conclusion, ID is more specific than class, and it's good practice to give each element an unique ID. I mean, you wouldn't make a bunch of copies of your ID and hand it off to a bunch of random people, because that wouldn't be...well, classy.
-    </font>
-     </article>
+  <h1>The Evolution of My Website</h1>
+
+  <h4>07.24.15</h4>
+<figure>
+    <img id="pic" src ="blog-images/mysite.png" />
+    <br>
+    <caption>The current look of my website</caption>
+  </figure>
+  <p>
+  My website started out with a very basic style, but I have reformatted it many times while my front end developer skills improved. The biggest changes I made was adding the hexagon buttons for social media links,  adding an animated navigation bar, and adding the twitter feed. In this article, I will briefly go over the steps and resources I used to make these changes.</p>
+  <p>
+  For the navigation bar, I downloaded a template consisting of HTML, CSS, and JQuery. I don't remember the exact resources I used, but a simple Google search will review many websites offering free navigation bar templates. To enable the animation, two additional files must be linked to the HTML file. One for the actual JQuery code, and another for the JQuery library that the code is dependent on. When I downloaded the template, the JQuery code was actually written inline, but I moved it to another file in order to decrease the clutter of my HTML file. Of course, the main advantage of having a separate file for your JQuery code is that if I ever wanted to change it in the future, I can just change one file instead of every single file.</p>
+  <p>
+  The hard part was of using the template was adapting it to fit the content of my site. In order to change the content, I had to understand the code that someone else wrote by, so I scrutinized every detail of the CSS and HTML code. Being able to understand foreign code is actually an important skill for a developer, because we might be asked to reuse or refactor other people's code.
+  </p>
+  <p>
+  The spinning hexagon buttons also depended on JQuery and CSS. It was built upon the Fontawesome icons, so I had to link the Fontawesome CSS as well as the CSS for the buttons. Using a plug in like this on a website you built from scratch allows you to understand how they work on the most basic level.  Sometimes a couple of files are all you need to make a feature work on a website.</p>
+  <p>
+  The biggest challenge was definitely making the CSS work as expected. Since there are no error messages, I couldn't tell why something doesn't work. When I encountered an unexpected behavior, I had to spend a lot of time debugging. The floating and the position properties of CSS was definitely the most troublesome features.</p>
+  <p>
+  Overall, the process of making this website did help me better understand how to use the many features of HTML and CSS, and it also gave me some clue on how JavaScript plays with the DOM. In the future, I want to be able to use one file for all the repetitive features of the website like the header and sidebar, so I don't have to keep copying and pasting for every single page when I make a change to the common features.</p>
+
+
+    </article>
     
     <aside class ="twitter">
     <div class ="recent_blog">
@@ -156,7 +161,7 @@
     <a href="skype:jchai002?add"><span class="hb hb-xs spin-icon"><i class="fa fa-skype"></i></span></a>
     <br>
     <br>
-    <b>Top Posts</b>
+   <b>Top Posts</b>
     <hr>
     <a href="c8-conflict.html">
    Conflict Resolution: It's Easy as 123</a><br>
@@ -190,12 +195,13 @@
     <a class="twitter-timeline" href="https://twitter.com/JerryChaiTea" data-widget-id="613950399574204416" height ="400px">Tweets by @JerryChaiTea</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</aside>
+
    
+
  
 
        <script src="../javaScript/jquery-2.1.0.min.js"></script>
         <script src="../javaScript/hexagons.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
         <script type="text/javascript" src="../javaScript/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="../javaScript/button-animation.js"></script>
         <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5580498e13123002" async="async"></script>
