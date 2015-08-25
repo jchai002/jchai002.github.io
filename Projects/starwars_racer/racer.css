@@ -1,0 +1,78 @@
+.racer_table td {
+  height: 50px;
+  width: 50px;
+}
+
+#flag {
+  float: right;
+  clear:left;
+  margin-right:100px;
+  height: 50px;
+  width: 50px;
+}
+.space td{
+  height: 10px;
+  width: 10px;
+}
+
+.racer_table td.active1 {
+  background-image: url("http://www.gifmania.co.uk/Movies-Cinema-Animated-Gifs/Animated-Science-Fiction-Movies/Star-Wars/X-Wing-Starfighter/x-wing10-36165.gif");
+  background-size: 50px 50px;
+    -webkit-transform:scaleX(-1);
+    -moz-transform:scaleX(-1);
+    -ms-transform:scaleX(-1);
+    -o-transform:scaleX(-1);
+    transform:scaleX(-1);
+}
+
+.racer_table td.active2 {
+  background-image: url("http://timelineuniverse.net/images/Tie%20Fighter.gif");
+  background-size: 50px 50px;
+  -webkit-transform:scaleX(-1);
+  -moz-transform:scaleX(-1);
+  -ms-transform:scaleX(-1);
+  -o-transform:scaleX(-1);
+  transform:scaleX(-1);
+}
+
+body {
+  background-image: url("http://www.hadleysplace.com/images/deathstar.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.spacer {
+  float: left;
+  clear: left;
+  height: 100;
+}
+
+.box {
+  display: inline-block;
+  float: left;
+  clear: left;
+  margin-top: 5%;
+   margin-left: 5%;
+  border: solid 3px #d23de2;
+  border-radius: 3px;
+
+}
+
+.box h1 {
+  padding: 10px;
+  color: #7f00ff;
+  font-family: Impact, Charcoal, sans-serif;
+
+}
+
+.instruction {
+  position: relative;
+  display: inline-block;
+  margin-left: 20%;
+  margin-top: 20%;
+}
+
+.racer_table {
+  float:left;
+  clear:left;
+}

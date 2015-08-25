@@ -1,0 +1,27 @@
+
+body {
+
+    background-image: url("http://www.gifmania.co.uk/Movies-Cinema-Animated-Gifs/Animated-Science-Fiction-Movies/Star-Wars/X-Wing-Starfighter/x-wing10-36165.gif");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
+#title {
+	display: block;
+	margin-left:27%;
+	margin-right:auto;
+	top:10%;
+}
+
+#click {
+	display: block;
+	margin-left:27%;
+	margin-right:auto;
+	margin-top:20%;
+  bottom: 18%;
+}
+
