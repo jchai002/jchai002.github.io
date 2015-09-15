@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     var title = $('#title_search').val();
     var year = $('#year_search').val();
-    var url = 'http://www.omdbapi.com/?t='
+    var url = 'https://www.omdbapi.com/?t='
     $.getJSON(url+title+'&y='+year).then(function(data){
       var title = data.Title || "Not Found"
       var date = data.Released || "Not Found"
