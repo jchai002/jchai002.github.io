@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>New Pathway - 首页</title>
+    <meta name="keywords" content="明杰教育,明杰,npathway"> 
+    <meta name="description" content="明杰教育">
+    <!-- dependency for foundation -->
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+    <link href="./css/common.css" rel="stylesheet">
+    <script src="./js/jquery.1.9.js"></script>
+    <script type="text/javascript" src="./js/jQueryRotate.js"></script>
+    <script src="./js/artDialog/artDialog.js"></script>
+    <link href="./js/artDialog/skins/default.css" rel="stylesheet">
+    <script src="./js/common.js"></script>
+
+</head>
+<body>
+
+    <script>
+
+
+    </script>
+    <div class="gotop show-for-medium-up">
+        <img src="./images/gotop.png" border="0" usemap="#Maps">
+        <map name="Maps" id="Maps">
+            <area shape="rect" coords="106,2,135,125" href="javascript:javascript:void(0)" onclick="show_file()" />
+            <area shape="rect" coords="4,143,106,254" href="#header" />
+        </map>
+    </div>
+    <script>
+        function show_file(){
+            art.dialog({
+                content: document.getElementById('userApi'),
+                id: 'EF893L',
+                fixed: true,
+                title:'资料下载',
+            });
+        }
+
+
+        function close(){
+            var list = art.dialog.list;
+            for (var i in list) {
+                list[i].close();
+            };
+        }
+
+
+        $(function(){
+
+
+            $('#u_submit').bind('click', function(){
+
+                close();
+                art.dialog({
+                    content: document.getElementById('login_l'),
+                    id: 'EF893L',
+                    fixed: true,
+                    title:'加载中',
+                });
+                var res = $('#form_u').serialize();
+                $.post('json.php',res, function(data){
+                    if(data == true){
+                        alert('提交成功!');
+                        $(".aui_state_focus").hide();
+                        close();
+                    }else if(data == false){
+                        alert('提交失败!');
+                    }else{
+                        alert(data);
+                    }
+                });
+            });
+
+        })
+
+    </script>
+
+    <style>
+        .gotop{ width:136px; height:256px; position: fixed; right:10px; top:250px; z-index:100;}
+        .userApi{ width:430px;  display:none; overflow: hidden;}
+        .userApi .clear{ clear: both;}
+        .userApi div{ line-height: 30px; vertical-align: middle; font-size: 14px;}
+        .userApi .u_name{ width:20%; text-align: center;  float: left;}
+        .userApi .u_input{ width:80%; text-align: left; float: left}
+        .userApi .u_input input, .userApi .u_input select{ padding:3px; width:200px;}
+        .userApi .u_row{ width:300px; float: left;}
+        .userApi .u_text{ width:130px; float: left;}
+        .userApi .u_text span{ line-height: 30px; vertical-align: middle; display: block; margin-top:30px; font-family: "Microsoft Yahei", "微软雅黑", karla-regular, STHeiti, Arial; font-size: 16px; color:#5c5c5c} 
+        .userApi .u_row li{ margin:10px 0;}
+        .userApi .but{ text-align: center; }
+        .userApi .but input{ padding:5px 10px;}
+    </style>
+
+    <div class="userApi" id="login_l"><img src="./images/login.gif"></div>
+    <div id="userApi" class="userApi" >
+        <form name="form_u" id="form_u" method="post" >
+            <div class="u_row">
+                <li>
+                    <div class="u_name">姓名</div>
+                    <div class="u_input"><input type="text" name="name"></div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="u_name">年级</div>
+                    <div class="u_input">
+                        <select name="nianji">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="K">K</option>
+                            <option value="C">C</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="u_name">联系电话</div>
+                    <div class="u_input"><input type="text" name="phone"></div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="u_name">email</div>
+                    <div class="u_input"><input type="text" name="email"></div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="u_name">城市</div>
+                    <div class="u_input"><input type="text" name="city"></div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <div class="u_name">所需资料</div>
+                    <div class="u_input">
+                        <select name="filetype" id="filetype">
+                            <option value="0">SAT资料</option>
+                            <option value="1">海外升学指导手册</option>
+                        </select>
+                    </div>
+                    <div class="clear"></div>   
+                </li>
+                <li>
+                    <div class="u_name">备注</div>
+                    <div class="u_input"><textarea name="description" style="height:52px; width:208px"></textarea></div>
+                    <div class="clear"></div>       
+                </li>
+            </div>
+            <div class="u_text">
+                <span>你好! 
+                    请输入您的个人信息，我们会为您发送电邮下载相关资料!</span>
+                </div>
+
+                <div class="clear"></div>
+                <div class="but"><input type="button" id="u_submit" value="提交"></div>
+            </form>
+        </div>
+
+
+
+
+
+        <div class="row header" id="header">
+            <!--图标入口 start-->
+            <div class="icon show-for-medium-up">
+                <img src="./images/icon.jpg" width="190" height="58" border="0" usemap="#Map" />
+                <map name="Map" id="Map">
+                    <area shape="circle" coords="158,28,17" href="./?l2/" />
+                    <area shape="circle" coords="126,27,15" href="./?l1/" />
+                    <area shape="circle" coords="83,28,16" href="http://i.youku.com/u/UNTI0MDEyNjg4" target="_blank">
+                    <area shape="circle" coords="52,28,16" href="http://e.weibo.com/newpathway" target="_blank">
+                    <area shape="circle" coords="21,28,16" href="http://www.youtube.com/newpathwayeducation" target="_blank">
+                </map>
+            </div>
+            <!--图标入口 end-->
+            <div class="row search_all show-for-medium-up">
+                <div class="search">
+                    <form name="form2" action="./?fsearch" method="post">
+                        <input type="text" name="key" class="key">
+                        <input type="submit" value="搜索">
+                    </form>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+
+
+
+            <div class="menu show-for-medium-up">
+                <ul>
+                    <li><a href="./">首页</a>
+
+                    </li>
+                    <li><a href="javascript:void(0)">我们的服务</a>
+
+
+                        <div class="menu_s">
+                            <div class="m">
+                                <p><a href="./?fpage/c000391|000393|000429">初中</a></p>
+                                <p><a href="./?fpage/c000391|000394|000431">高中</a></p>
+                                <p><a href="./?fpage/c000391|000395|000440">海外升学指导</a></p>
+                                <p><a href="./?fpage/c000391|000396">小学</a></p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="javascript:void(0)">名师团队</a>
+
+
+                        <div class="menu_s">
+                            <div class="m">
+                                <p><a href="./?fpage/c000397|000398">名师介绍</a></p>
+                                <p><a href="./?fpage/c000397|000399">海外升学指导顾问</a></p>
+                                <p><a href="./?fpage/c000397|000400">名师课堂</a></p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="javascript:void(0)">资讯中心</a>
+
+
+                        <div class="menu_s">
+                            <div class="m">
+                                <p><a href="./?fnews/c000360|000552|000596">学科资讯</a></p>
+                                <p><a href="./?fnews/c000360|000553">最新活动</a></p>
+                                <p><a href="./?fnews/c000360|000554|000635">考试提醒</a></p>
+                                <p><a href="./?fnews/c000360|000555">课程表</a></p>
+                                <p><a href="./?fnews/c000360|000642">媒体报道</a></p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="http://prepsmith.com/">在线测试</a>
+
+
+                    </li>
+                    <li><a href="javascript:void(0)">加入我们</a>
+
+
+                        <div class="menu_s">
+                            <div class="m">
+                                <p><a href="./?fpage/c000444|000537">职业生涯</a></p>
+                                <p><a href="./?fpage/c000444|000538|000540">职位招聘</a></p>
+                                <p><a href="./?fpage/c000444|001094">公司文化</a></p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li><a href="javascript:void(0)">关于明杰</a>
+                        <div class="menu_s">
+                            <div class="m">
+                                <p><a href="./?fpage/c000410|000411">介绍</a></p>
+                                <p><a href="./?fpage/c000410|000412">发展历程</a></p>
+                                <p><a href="./?fpage/c000410|000415">合作伙伴</a></p>
+                                <p><a href="./?fpage/c000410|000416">联系我们</a></p>
+                                <p><a href="./?fnews/l1/cvideos">精彩视频</a></p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+            <script type="text/javascript">
+                $(".menu ul li").eq(4).find("a").attr("target","_blank");
+            </script>
+        </div>
+
+        <div class="top2"></div>
+
+        <div class="small-12 cloumns show-for-small-only">
+            <ul class="accordion" data-accordion>
+                <li class="accordion-navigation">
+                    <a href="./">首页</a>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel2">我们的服务</a>
+                    <div id="panel2" class="content">
+                        <div class="m">
+                            <p><a href="./?fpage/c000391|000393|000429">初中</a></p>
+                            <p><a href="./?fpage/c000391|000394|000431">高中</a></p>
+                            <p><a href="./?fpage/c000391|000395|000440">海外升学指导</a></p>
+                            <p><a href="./?fpage/c000391|000396">小学</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel3">名师团队</a>
+                    <div id="panel3" class="content">
+                        <div class="m">
+                            <p><a href="./?fpage/c000397|000398">名师介绍</a></p>
+                            <p><a href="./?fpage/c000397|000399">海外升学指导顾问</a></p>
+                            <p><a href="./?fpage/c000397|000400">名师课堂</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel4">资讯中心</a>
+                    <div id="panel4" class="content">
+                        <div class="m">
+                            <p><a href="./?fnews/c000360|000552|000596">学科资讯</a></p>
+                            <p><a href="./?fnews/c000360|000553">最新活动</a></p>
+                            <p><a href="./?fnews/c000360|000554|000635">考试提醒</a></p>
+                            <p><a href="./?fnews/c000360|000555">课程表</a></p>
+                            <p><a href="./?fnews/c000360|000642">媒体报道</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="http://prepsmith.com/">在线测试</a>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel6">加入我们</a>
+                    <div id="panel6" class="content">
+                        <div class="m">
+                            <p><a href="./?fpage/c000444|000537">职业生涯</a></p>
+                            <p><a href="./?fpage/c000444|000538|000540">职位招聘</a></p>
+                            <p><a href="./?fpage/c000444|001094">公司文化</a></p>
+                        </div>
+                    </div>
+                </li>
+                <li class="accordion-navigation">
+                    <a href="#panel7">关于明杰</a>
+                    <div id="panel7" class="content">
+                        <div class="m">
+                            <p><a href="./?fpage/c000410|000411">介绍</a></p>
+                            <p><a href="./?fpage/c000410|000412">发展历程</a></p>
+                            <p><a href="./?fpage/c000410|000415">合作伙伴</a></p>
+                            <p><a href="./?fpage/c000410|000416">联系我们</a></p>
+                            <p><a href="./?fnews/l1/cvideos">精彩视频</a></p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--导航 end-->
+
+
+
+        <!--banner start-->
+        <div class="banner slide show-for-medium-up" id="img-play">
+            <ul>
+                <li style="background:url('uploadfile/Media/focus_max_1_6.jpg') no-repeat center center"><a href="?fnews/c000360|000555" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_6.jpg" alt="21世纪演讲学校课程"> -->
+                <li style="background:url('uploadfile/Media/focus_max_1_2.jpg') no-repeat center center"><a href="?fnew/i580" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_2.jpg" alt="学生斩获高分 赢得名校青睐"> -->
+                <li style="background:url('uploadfile/Media/focus_max_1_1.jpg') no-repeat center center"><a href="?fnew/i535" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_1.jpg" alt="2015 New Pathway 波士顿感恩节课程"> -->
+                <li style="background:url('uploadfile/Media/focus_max_1_5.jpg') no-repeat center center"><a href="?fnew/i557" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_5.jpg" alt="以爱净水，守护星星的孩子"> -->
+                <li style="background:url('uploadfile/Media/focus_max_1_3.jpg') no-repeat center center"><a href="#" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_3.jpg" alt="秋季"> -->
+                <li style="background:url('uploadfile/Media/focus_max_1_7.jpg') no-repeat center center"><a href="?fnew/i554" target="_blank"><img src="" style="display:none;" /></a></li>
+                <!-- <img src="uploadfile/Media/focus_max_1_7.jpg" alt="2015年New Pathway考团服务"> -->
+            </ul>
+            <div class="bg"></div>
+            <div class="num"></div>
+            <a class="skip prev" title="上一张">上一张</a>
+            <a class="skip next" title="下一张">下一张</a>
+        </div>
+<!--  <div class="ad">
+<img src="./images/top3.jpg">
+</div> -->
+<div class="classmenu">
+    <ul>
+        <li class="title"></li>
+        <li><a href="/?fpage/c000391|000394|000431">SAT I</a></li>
+        <li><a href="/?fpage/c000391|000394|000433">SAT II</a></li>
+        <li><a href="/?fpage/c000391|000394|000432">ACT</a></li>
+        <li><a href="/?fpage/c000391|000394|000437">托福</a></li>
+    </ul>
+</div>
+<!--banner end-->
+<div class="row top4">
+
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="./?fpage/c000401|000402" target="_blank"><div class="icon_b b_1"></div></a>
+            <div class="text">教学成果</div>
+        </div>
+    </div>
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="./?fpage/c000397|000398" target="_blank"><div class="icon_b b_2"></div></a>
+            <div class="text">明星教师</div>
+        </div>
+    </div>
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="./?fnews/c000360|000555" target="_blank"><div class="icon_b b_3"></div></a>
+            <div class="text">最新课程</div>
+        </div>
+    </div>
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="./?fnews/c000577" target="_blank"><div class="icon_b b_4"></div></a>
+            <div class="text">海外知名院校介绍</div>
+        </div>
+    </div>
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="./?fnews/c000360|000552|000596" target="_blank"><div class="icon_b b_4"></div></a>
+            <div class="text">学科资讯</div>
+        </div>
+    </div>
+    <div class="small-6 medium-2 columns">
+        <div class="icon">
+            <a href="http://prepsmith.com/" target="_blank"><div class="icon_b b_5"></div></a>
+            <div class="text">在线测试</div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<style type="text/css">
+    .news_ly .f_l{height:300px;}
+    .news_ly .f_l .ly{margin-top:5px;}
+    .news_ly .f_l .ly p{height:20px;max-height:20px;}
+    .news_ly .f_l .ly p a{line-height:20px;}
+</style>
+<!--新闻 start-->
+<div class="row news_ly show-for-medium-up">
+    <!--左侧start-->
+    <div class="f_l">
+        <a href="./?fnews/c000360" target="_blank" style="display:block;width:100%;height:68px;"></a>
+
+        <div class="ly">
+            <li><a href="./?fnew/i548" target="_blank">·一封来自New Pathway学生家长的感谢信 </a></li>
+            <p><a href="./?fnew/i548" target="_blank">我家孩子5月AP US History获得5分，6月SAT II US History获得770，非常感谢您和明杰教育，并麻烦您向老师代为致谢，以后有机会再到明杰学习，再次深深感谢。 </a></p>
+        </div>
+        <div class="ly">
+            <li><a href="./?fnew/i465" target="_blank">·一封致Danny的感谢信 </a></li>
+            <p><a href="./?fnew/i465" target="_blank">我知道我只有努力学习才能考进大学。我要实现我的梦想，并且感激一路以来帮助过我的人。正因为你的帮助，让我有勇气面对困境不服输。 </a></p>
+        </div>
+        <div class="ly">
+            <li><a href="./?fnew/i451" target="_blank">·人生导师课程 | 失败与坚持 </a></li>
+            <p><a href="./?fnew/i451" target="_blank">通过Danny和Tom的人生导师课程，我学到了很多积极的事情，而这些将有益于我未来的发展。其中包括11个有效的演讲技巧、高效能人士的7个习惯、学习词汇的方法、如何让论文变得更吸引人、如 </a></p>
+        </div>
+        <div class="ly">
+            <li><a href="/?fnew/i518" target="_blank">·2015启德教育宣传片（标准版） </a></li>
+            <p><a href="/?fnew/i518" target="_blank"> </a></p>
+        </div>
+        <div class="ly">
+            <li><a href="/?fnew/i517" target="_blank">·2015启德教育宣传片（精简版） </a></li>
+            <p><a href="/?fnew/i517" target="_blank"> </a></p>
+        </div>
+    </div>
+    <!--右侧end-->
+    <!--左侧start-->
+    <div class="f_r show-for-medium-up">
+        <style>
+            #_video{margin:0;}
+            ._video{position:relative;z-index: 100;width:284px;height:230px;margin:0 auto;margin-top:15px;overflow:hidden;}
+            ._video img{width:280px;height:230px;cursor:pointer;}
+            ._video span{position:absolute;bottom:0;display:block;width:94%;color:#FFF;font-size:14px;line-height:25px;overflow:hidden;padding:0 2%;left:0;height:25px;background:#000;opacity:0.8;filter:alpha(opacity=80);cursor:pointer;}
+            .videoC{position:relative;z-index:1000;}
+            .videoC #v_prev{position:absolute;top:90px;left:5px;display:block;width:28px;height:48px;background:url("/images/prev.png") no-repeat;}
+            .videoC #v_next{position:absolute;top:90px;right:5px;display:block;width:28px;height:48px;background:url("/images/next.png") no-repeat;}
+            .object_a object{margin:0;}
+            .news_ly .f_r{margin-top:0;height:300px;}
+            .news_ly .f_r #video_url{display:block;height:54px;width:100%;}
+        </style>
+        <a href="http://www.npathway.com/?fnews/l1/cvideos" target="_blank" id="video_url"></a>
+        <div class="videoC">
+            <a href="javascript:void(0)" id="v_prev"></a>
+            <a href="javascript:void(0)" id="v_next"></a>
+            <script type="text/javascript" src="./shipin/ckplayer/ckplayer.js" charset="utf-8"></script>
+            <script type="text/javascript" src="./shipin/dizhi.js"></script>
+            <script>
+
+
+                $(function(){
+var limit = 0; //起始条数 原形SQL LIMIT p, 1
+var lang  = '1'; //语言
+var url   = './?fnews/vm/l'+lang+'/p';
+var curl  = './?fnews/vc/l'+lang; //视频数量请求地址
+
+
+//上一条
+$('#v_prev').unbind('click').click(function(){
+    limit = limit == 0 ? limit : limit-1;
+    tab_video(url, limit, 1);
+});
+$('#v_next').unbind('click').click(function(){
+    limit++;
+    $.get(curl).success(function(data){
+        if(limit > data){
+            limit = 0;
+        }
+        tab_video(url, limit, 0);
+    });
+
+});
+tab_video(url, 0, 1);
+});
+
+
+/**
+* 切换视频
+* @param  {[type]} url   请求地址
+* @param  {[type]} limit 起始条数 原形SQL LIMIT p, 1
+* @param  {[type]} type  类型 0下一条 1上一条
+* @return {[type]}       [description]
+*/
+function tab_video(url, limit, type){
+    url += limit;
+// console.log(url);
+var html = '<div id="_video"></div>';
+$.get(url).success(function(data){
+    if(data){
+        data = jQuery.parseJSON(data);
+        $('#_video').remove();
+        $('#video').html(html);
+        showVideo(data.video, 280, 230, true, data.NewsPhoto);
+// console.log(data.NewsPhoto);
+$("#video").append($("<img src='/" + data.NewsPhoto + "' />"));
+$("#video").append($("<span>" + data.NewsTitle + "</span>"));
+$("#_video").hide();
+$("#video img, #video span").click(function(){
+    $("#video img, #video span").hide();
+    $("#_video").show();
+});
+}else{
+    limit = type==0 ? limit -1 : limit+1;
+    tab_video(url, limit, type);
+}
+});
+}
+
+</script>
+</div>
+
+
+<div id="video" class="_video show-for-medium-up">
+    <div id="_video"></div>
+</div>
+
+</div>
+<!--右侧end-->
+</div>
+<!--新闻 end-->
+
+
+
+
+
+
+
+
+
+    <div class="small-12 medium-10 mediumcentered columns" style="margin-left:8%;margin-right:8%;">
+    <div class="row name_dz">校区地址</div>
+        <p class="name">上海</p>
+        <ul class="small-block-grid-1 medium-block-grid-5">
+            <li>
+                <div class="xq"><a href="./?fpage/c000410|000416#xujiahui" target="_blank"><img src="./images/bz.jpg">徐家汇校区(总公司)</a></div>
+                <div>上海市徐汇区零陵路899号飞洲国际大厦25楼F,G,H单元<br>
+                    Tel: +86-21-5432-5782</div>
+                </li>
+                <li>
+                    <div class="xq"><a href="./?fpage/c000410|000416#gubei" target="_blank"><img src="./images/bz.jpg">古北校区</a></div>
+                    <div>上海市长宁区水城南路37号万科广场北9楼<br>
+                        Tel: +86-21-6275-4553</div>
+                    </li>
+                    <li>
+                        <div class="xq"><a href="./?fpage/c000410|000416#pudong" target="_blank"><img src="./images/bz.jpg">浦东校区</a></div>
+                        <div>上海市浦东新区长柳路58号证大立方1705室<br>
+                            Tel: +86-21-3382-0351</div>
+                        </li>
+                        <li>
+                            <div class="xq"><a href="./?fpage/c000410|000416#yangpu" target="_blank"><img src="./images/bz.jpg">杨浦校区</a></div>
+                            <div>上海市杨浦区国宾路36号万达广场B座1901,1904室<br>
+                                Tel: +86-21-5561-0157 
+                                <span style="display:block;text-indent:25px;">+86-21-5589-7627</span></div>
+                            </li>
+                            <li>
+                                <div class="xq"><a href="./?fpage/c000410|000416#renguang" target="_blank"><img src="./images/bz.jpg">人广校区</a></div>
+                                <div>上海市黄浦区北京西路1号新金桥广场10层<br>
+                                    Tel: +86-21-6135-9188</div>
+                                </li>
+
+
+                                <li>
+                                    <p class="name">北京</p>
+                                    <div class="xq"><a href="./?fpage/c000410|000416#shunyi" target="_blank"><img src="./images/bz.jpg">顺义校区</a></div>
+                                    <div>北京市顺义区后沙峪镇天北路莱蒙湖会所<br>
+                                        Tel: +86-10-6475-6678</div>
+                                    </li>
+
+
+                                    <li>
+                                        <p class="name">香港</p>
+                                        <div class="xq"><a href="./?fpage/c000410|000416#hk" target="_blank"><img src="./images/bz.jpg">香港校区</a></div>
+                                        <div>香港尖沙咀弥敦道132号美丽华大厦21楼2112室<br/>
+                                            Tel: +852-2736-0390
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <p class="name">美国</p>
+                                        <div class="xq"><a href="http://newpathwayeducation.com/" target="_blank" style="text-decoration:underline"><img src="./images/bz.jpg">纽约校区</a></div>
+                                        <div>曼哈顿办公室 <br>
+                                            纽约上东区东87街177号300室<br/>
+                                            邮编：10128
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <!--  <div class="clear"></div> -->
+
+                            <style type="text/css">
+                                .addres{margin-top:0;}
+                                .link{width:100%;background:#eaeaea;margin-top:25px;}
+                                .linkc{padding:5px 0;height:75px;width:100%;margin:0 auto;overflow:hidden;line-height:75px;}
+                                .linkc h2{height:75px;float:left;width:30px;background:url("/images/you.png") no-repeat center center;}
+                                .linkc a{float:left;padding-top:9px;}
+                            </style>
+<!-- 
+<div class="link">
+<div class="linkc">
+<h2></h2>
+<a href="http://www.oacac.com/" target="_blank"><img src="/link/oacac.jpg" align="absmiddle" /></a>
+</div>
+</div> -->
+
+<!--弹窗-->
+<style>
+    .alerttk{ width:500px; height:500px; position: fixed;bottom:50px; left:30%; z-index:1000; background:#c81042; display:none;}
+    .alerttk .pt1{ line-height: 45px; vertical-align: middle;height: 45px; overflow:hidden; color:#fff; font-size: 15px;}
+    .alerttk .pt1 img:nth-child(1){ margin:7px 15px;}
+    .alerttk .pt1 img:nth-child(2){ margin:10px 5px;}
+    .alerttk .pt2{ border:0px; border-radius: 6px; background:#fff; width:490px; height:435px; padding-top:10px; margin:5px auto; color:#c81042;}
+    .alerttk .pt2 .ptall{  width:400px; margin:auto; height:420px;}
+    .alerttk .pt2 .pa1{ line-height: 25px; vertical-align: middle; text-align: left;}
+    .alerttk .pt2 .pa2 input{ line-height: 30px; width:100%; background:#ededed; border:0px; border-bottom:4px solid #e3e3e3; vertical-align: middle; }
+    .alerttk .pt2 .pa3{ margin-top:20px; padding-top:15px; padding-bottom:20px; border-top:1px dashed #c81042;}
+    .alerttk .pt2 .pa3 span:nth-child(1){margin-right:10px;}
+    .alerttk .pt2 .pa3 span:nth-child(2) input{margin-right:5px; }
+    .alerttk .pt2 .pa3 span:nth-child(3) input{margin-right:5px; }
+    .alerttk .pt2 .pa4 textarea{ width:100%; height:80px;background:#ededed; border:0px; border-bottom:4px solid #e3e3e3; }
+    .alerttk .pt2 .pa5{ margin-top:20px;}
+    .alerttk .pt2 .pa5 span:nth-child(1){color:#c81042;}
+    .alerttk .pt2 .pa5 span button{ border:0px; border-radius: 6px; background:#c81042; color:#fff; padding:5px 10px;}
+    .alerttk .pt2 .pa5 span:nth-child(2){ margin-left:100px; margin-right:10px;}
+</style>
+
+<script>
+    $(function(){
+        var alerts = localStorage.zixun;
+        if(alerts !='yes'){
+            $('.alerttk').show();
+        }
+
+        $('.cha').bind('click', function(){
+            $('.alerttk').remove();
+        });
+
+        $('#alertact').bind('click', function(){
+
+            var name = $('#alertform input[name="name"]').val();
+            var phone = $('#alertform input[name="phone"]').val();
+            var email = $('#alertform input[name="email"]').val();
+            var remark = $('#alertform input[name="remark"]').val();
+            if(!name.length){
+                alert('请填写名称');
+                return false;
+            }else if(!phone.length){
+                alert('请填写联系方式');
+                return false;
+            }else if(!email.length){
+                alert('请填写邮箱');
+                return false;
+            }else{
+                localStorage.zixun = 'yes';
+                $('#alertform').submit();
+            }
+
+        });
+
+    });
+
+</script>
+
+
+<div class="alerttk">
+    <div class="pt1"><img src="./images/login_alert.png">留下您的信息，我们将尽快安排顾问们与您联系，为您解答！<img src="./images/icon_ch.png" class="cha"></div>
+    <form name="" id="alertform" action="./?fzixun" method="post">
+        <div class="pt2">
+            <div class="ptall">
+                <div class="pa1">您的姓名</div>
+                <div class="pa2"><input type="text" name="name"></div>
+                <div class="pa1">联系方式</div>
+                <div class="pa2"><input type="text" name="phone"></div>
+                <div class="pa1">电子邮件</div>
+                <div class="pa2"><input type="text" name="email"></div>
+                <div class="pa3">
+                    <span>咨询问题</span>
+                    <span><input type="radio" name="wenti" checked="checked" value="课程信息">课程信息</span>
+                    <span><input type="radio" name="wenti" value="留学信息">留学信息</span>
+                </div>
+                <div class="pa1">留言备注</div>
+                <div class="pa4">
+                    <textarea  name="remark"></textarea>
+                    <input type="hidden" name="lang" value="1">
+                </div>
+                <div class="pa5">
+                    <span>客服热线：400-616-8219</span>
+                    <span><button type="button" id="alertact">提交</button></span>
+                    <span><button type="button" class="cha">取消</button></span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!--弹窗 end-->
+
+<div class="addres">
+    <div class="row addcon">
+
+        <!-- <div class="fenge small-6 columns">
+            <div><a href="javascript:void(0)">我们的服务</a></div>
+
+            <p><a href="./?fpage/c000391|000393|000429">初中</a></p>
+            <p><a href="./?fpage/c000391|000394|000431">高中</a></p>
+            <p><a href="./?fpage/c000391|000395|000440">海外升学指导</a></p>
+            <p><a href="./?fpage/c000391|000396">小学</a></p>
+
+        </div>
+        <div class="fenge small-6 columns">
+            <div><a href="javascript:void(0)">名师团队</a></div>
+
+            <p><a href="./?fpage/c000397|000398">名师介绍</a></p>
+            <p><a href="./?fpage/c000397|000399">海外升学指导顾问</a></p>
+            <p><a href="./?fpage/c000397|000400">名师课堂</a></p>
+
+        </div>
+        <div class="fenge small-6 columns">
+            <div><a href="javascript:void(0)">资讯中心</a></div>
+
+            <p><a href="./?fnews/c000360|000552|000596">学科资讯</a></p>
+            <p><a href="./?fnews/c000360|000553">最新活动</a></p>
+            <p><a href="./?fnews/c000360|000554|000635">考试提醒</a></p>
+            <p><a href="./?fnews/c000360|000555">课程表</a></p>
+            <p><a href="./?fnews/c000360|000642">媒体报道</a></p>
+
+        </div>
+        <div class="fenge small-6 columns">
+            <div><a href="javascript:void(0)">加入我们</a></div>
+
+            <p><a href="./?fpage/c000444|000537">职业生涯</a></p>
+            <p><a href="./?fpage/c000444|000538">职位招聘</a></p>
+            <p><a href="./?fpage/c000444|001094">公司文化</a></p>
+
+        </div>
+        <div class="fenge small-6 columns">
+            <div><a href="javascript:void(0)">关于明杰</a></div>
+
+            <p><a href="./?fpage/c000410|000411">介绍</a></p>
+            <p><a href="./?fpage/c000410|000412">发展历程</a></p>
+            <p><a href="./?fpage/c000410|000415">合作伙伴</a></p>
+            <p><a href="./?fpage/c000410|000416">联系我们</a></p>
+            <p><a href="./?fnews/l1/cvideos">精彩视频</a></p>
+
+        </div> -->
+
+
+
+<!--                      <li><a href="./">首页</a>
+
+
+</li>
+<li><a href="javascript:void(0)">我们的服务</a>
+
+
+<div class="menu_s">
+<div class="m">
+<p><a href="./?fpage/c000391|000393">初中</a></p>
+<p><a href="./?fpage/c000391|000394">高中</a></p>
+<p><a href="./?fpage/c000391|000395">海外升学指导</a></p>
+<p><a href="./?fpage/c000391|000396">小学</a></p>
+</div>
+</div>
+
+</li>
+<li><a href="javascript:void(0)">名师团队</a>
+
+
+<div class="menu_s">
+<div class="m">
+<p><a href="./?fpage/c000397|000398">名师介绍</a></p>
+<p><a href="./?fpage/c000397|000399">海外升学指导顾问</a></p>
+<p><a href="./?fpage/c000397|000400">名师课堂</a></p>
+</div>
+</div>
+
+</li>
+<li><a href="javascript:void(0)">资讯中心</a>
+
+
+<div class="menu_s">
+<div class="m">
+<p><a href="./?fnews/c000360|000552">学科资讯</a></p>
+<p><a href="./?fnews/c000360|000553">最新活动</a></p>
+<p><a href="./?fnews/c000360|000554">考试提醒</a></p>
+<p><a href="./?fnews/c000360|000555">课程表</a></p>
+<p><a href="./?fnews/c000360|000642">媒体报道</a></p>
+</div>
+</div>
+
+</li>
+<li><a href="http://prepsmith.com/">在线测试</a>
+
+
+</li>
+<li><a href="javascript:void(0)">加入我们</a>
+
+
+<div class="menu_s">
+<div class="m">
+<p><a href="./?fpage/c000444|000537">职业生涯</a></p>
+<p><a href="./?fpage/c000444|000538">职位招聘</a></p>
+<p><a href="./?fpage/c000444|001094">公司文化</a></p>
+</div>
+</div>
+
+</li>
+<li><a href="javascript:void(0)">关于明杰</a>
+
+
+<div class="menu_s">
+<div class="m">
+<p><a href="./?fpage/c000410|000411">介绍</a></p>
+<p><a href="./?fpage/c000410|000412">发展历程</a></p>
+<p><a href="./?fpage/c000410|000415">合作伙伴</a></p>
+<p><a href="./?fpage/c000410|000416">联系我们</a></p>
+<p><a href="./?fnews/l1/cvideos">精彩视频</a></p>
+</div>
+</div>
+
+</li>
+-->      
+
+
+
+
+
+
+
+
+<!--  		<div class="fenge">
+<div><a href="javascript:void(0)">我们的服务</a></div>
+<p><a href="./?fpage/c000391|000393">初中</a></p>
+<p><a href="./?fpage/c000391|000394">高中</a></p>
+<p><a href="./?fpage/c000391|000395">海外升学指导</a></p>
+<p><a href="./?fpage/c000391|000396">小学</a></p>
+
+</div>
+<div class="fenge">
+<div><a href="javascript:void(0)">名师团队</a></div>
+<p><a href="./?fpage/c000397|000398">名师介绍</a></p>
+<p><a href="./?fpage/c000397|000399">海外升学指导顾问</a></p>
+<p><a href="./?fpage/c000397|000400">名师课堂</a></p>
+
+</div>
+<div class="fenge">
+<div><a href="javascript:void(0)">资讯中心</a></div>
+<p><a href="./?fnews/c000360|000552">学科资讯</a></p>
+<p><a href="./?fnews/c000360|000553">最新活动</a></p>
+<p><a href="./?fnews/c000360|000554">考试提醒</a></p>
+<p><a href="./?fnews/c000360|000555">课程表</a></p>
+<p><a href="./?fnews/c000360|000642">媒体报道</a></p>
+
+</div>
+<div class="fenge">
+<div><a href="javascript:void(0)">加入我们</a></div>
+<p><a href="./?fpage/c000444|000537">职业生涯</a></p>
+<p><a href="./?fpage/c000444|000538">职位招聘</a></p>
+<p><a href="./?fpage/c000444|001094">公司文化</a></p>
+
+</div>
+<div class="fenge">
+<div><a href="javascript:void(0)">关于明杰</a></div>
+<p><a href="./?fpage/c000410|000411">介绍</a></p>
+<p><a href="./?fpage/c000410|000412">发展历程</a></p>
+<p><a href="./?fpage/c000410|000415">合作伙伴</a></p>
+<p><a href="./?fpage/c000410|000416">联系我们</a></p>
+<p><a href="./?fnews/l1/cvideos">精彩视频</a></p>
+
+</div>
+-->
+</div>
+<div class="clear"></div>
+</div>
+<div class="footer">
+    <div class="row">Copyright(C). 曼哈顿上海明杰教育集团. 版权所有 <a href="http://www.miitbeian.gov.cn/" target="_blank" style="color:#FFF;">沪ICP备13011047号</a><br>
+        上海市徐汇区零陵路899号飞州国际大厦25楼F,G,H单元(近漕溪北路)
+    </div>
+</div>
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
